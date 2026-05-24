@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Additions — Draft for Review · PhillipLBHalpern.com</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e1a2b;
+    --ink: #1a1a1a;
+    --gold: #b8943f;
+    --gold-light: #d4a843;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --mid-gray: #6b6b6b;
+    --rule: #c8bfa8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'EB Garamond', Georgia, serif; background: var(--warm-white); color: var(--ink); font-size: 18px; line-height: 1.75; }
+
+  .review-nav { position: sticky; top: 0; z-index: 100; background: #2a1400; border-bottom: 2px solid var(--gold); padding: 0 48px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+  .review-nav-title { font-family: 'EB Garamond', Georgia, serif; color: var(--gold); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .review-nav-links { display: flex; gap: 28px; list-style: none; }
+  .review-nav-links a { font-family: 'EB Garamond', Georgia, serif; color: rgba(255,255,255,0.65); text-decoration: none; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .review-nav-links a:hover { color: var(--gold-light); }
+
+  .review-header { background: var(--navy); padding: 56px 10vw 52px; border-bottom: 1px solid rgba(184,148,63,0.2); }
+  .review-eyebrow { font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 18px; }
+  .review-header h1 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 400; color: white; line-height: 1.2; margin-bottom: 20px; }
+  .review-header p { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 620px; line-height: 1.7; }
+  .review-toc { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .toc-item { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); background: var(--gold); padding: 5px 14px; text-decoration: none; opacity: 0.9; transition: opacity 0.2s; }
+  .toc-item:hover { opacity: 1; }
+
+  .section { padding: 90px 10vw; }
+  .section.cream { background: var(--cream); }
+  .section-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 14px; }
+  .section-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(28px, 3.5vw, 44px); font-weight: 400; line-height: 1.2; margin-bottom: 20px; }
+  .section-rule { width: 60px; height: 2px; background: var(--gold); margin-bottom: 40px; }
+  .prose { max-width: 680px; font-size: 18px; line-height: 1.8; color: var(--mid-gray); margin-bottom: 20px; }
+
+  .addition-label { display: inline-flex; align-items: center; gap: 10px; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: white; background: #8b1a1a; padding: 4px 12px; margin-bottom: 48px; font-family: 'EB Garamond', Georgia, serif; }
+
+  .honors-banner { padding: 80px 10vw; background: var(--navy); border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); text-align: center; }
+  .honors-numeral { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(72px, 12vw, 130px); color: var(--gold); line-height: 1; display: block; letter-spacing: -0.02em; }
+  .honors-main-title { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(17px, 2.2vw, 24px); color: rgba(255,255,255,0.92); margin-top: 12px; letter-spacing: 0.04em; line-height: 1.4; }
+  .honors-subtitle { font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.14em; text-transform: uppercase; margin-top: 8px; }
+  .honors-divider { width: 1px; height: 48px; background: var(--gold); margin: 32px auto; opacity: 0.35; }
+  .honors-also { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; }
+  .honors-agencies { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px 36px; }
+  .honors-agency { font-size: 13px; letter-spacing: 0.13em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .honors-agency.pending { color: var(--gold); opacity: 0.7; font-style: italic; }
+
+  .cases-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2px; margin-top: 50px; }
+  .case-card { background: var(--cream); padding: 40px 36px; border-top: 3px solid transparent; transition: border-color 0.25s; }
+  .case-card:hover { border-top-color: var(--gold); }
+  .case-number { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; letter-spacing: 0.2em; color: var(--gold); display: block; margin-bottom: 16px; }
+  .case-rule { width: 30px; height: 1px; background: var(--gold); margin-bottom: 20px; }
+  .case-name { font-family: 'Playfair Display', Georgia, serif; font-size: 19px; font-weight: 400; line-height: 1.3; margin-bottom: 8px; color: var(--navy); }
+  .case-meta { display: block; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+  .case-desc { font-size: 16px; line-height: 1.78; color: #4a4a4a; }
+  .case-badge { display: inline-block; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--navy); border: 1px solid rgba(14,26,43,0.35); padding: 3px 9px; margin-top: 16px; }
+
+  .intl-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 52px 64px; margin-top: 52px; }
+  .intl-item { border-left: 2px solid var(--gold); padding-left: 28px; }
+  .intl-location { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+  .intl-year { font-size: 12px; letter-spacing: 0.17em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px; }
+  .intl-desc { font-size: 16px; line-height: 1.75; color: var(--mid-gray); }
+
+  .service-block { margin-bottom: 54px; padding-bottom: 54px; border-bottom: 1px solid var(--rule); max-width: 760px; }
+  .service-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .service-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: 400; color: var(--navy); margin-bottom: 6px; }
+  .service-meta { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 16px; }
+  .service-desc { font-size: 17px; line-height: 1.82; color: var(--mid-gray); }
+
+  hr.divider { border: none; border-top: 1px solid var(--rule); margin: 0 10vw; }
+
+  .review-footer { background: var(--navy); padding: 56px 10vw; border-top: 2px solid var(--gold); }
+  .review-footer h3 { font-family: 'Playfair Display', Georgia, serif; font-size: 22px; font-weight: 400; color: var(--gold); margin-bottom: 28px; }
+  .review-q { margin-bottom: 18px; font-size: 16px; line-height: 1.7; color: rgba(255,255,255,0.7); }
+  .review-q strong { color: white; }
+  .pending-list { list-style: none; margin-top: 28px; border-top: 1px solid rgba(184,148,63,0.2); padding-top: 28px; }
+  .pending-list li { font-size: 15px; color: rgba(255,255,255,0.6); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: baseline; gap: 14px; }
+  .pending-list li::before { content: '○'; color: var(--gold); font-size: 10px; flex-shrink: 0; }
+
+  @media (max-width: 780px) { .intl-grid, .cases-grid { grid-template-columns: 1fr; } .review-nav-links { display: none; } }
+</style>
+</head>
+<body>
+
+<nav class="review-nav">
+  <span class="review-nav-title">Draft Additions — PhillipLBHalpern.com</span>
+  <ul class="review-nav-links">
+    <li><a href="#honors">Honors</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#international">International</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#notes">Notes</a></li>
+  </ul>
+</nav>
+
+<div class="review-header">
+  <span class="review-eyebrow">For Your Review</span>
+  <h1>Proposed Website Additions</h1>
+  <p>Four new sections drafted to match your existing site's style exactly. Mark up what to keep, cut, revise, or supplement — then I'll integrate everything into the live file in one pass.</p>
+  <div class="review-toc">
+    <a href="#honors" class="toc-item">1 · Honors Banner</a>
+    <a href="#cases" class="toc-item">2 · Case Cards (12 new)</a>
+    <a href="#international" class="toc-item">3 · International Service</a>
+    <a href="#service" class="toc-item">4 · Service &amp; Leadership</a>
+    <a href="#notes" class="toc-item">5 · Open Questions</a>
+  </div>
+</div>
+
+
+<!-- ADDITION 1: HONORS BANNER -->
+<div id="honors" class="honors-banner">
+  <span class="addition-label">Addition 1 · Honors Banner · Proposed: after Hero, before About</span>
+  <span class="honors-numeral">7</span>
+  <p class="honors-main-title">Department of Justice Distinguished Service Awards</p>
+  <p class="honors-subtitle">The Department's Second-Highest Honor &nbsp;·&nbsp; Received on an Unprecedented Seven Separate Occasions</p>
+  <div class="honors-divider"></div>
+  <p class="honors-also">Also Recognized By</p>
+  <div class="honors-agencies">
+    <span class="honors-agency">Federal Bureau of Investigation</span>
+    <span class="honors-agency">Internal Revenue Service</span>
+    <span class="honors-agency">U.S. Customs Service</span>
+    <span class="honors-agency">Food &amp; Drug Administration</span>
+    <span class="honors-agency pending">Central Intelligence Agency [awaiting confirmation]</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+
+<!-- ADDITION 2: CASE CARDS -->
+<section id="cases" class="section cream">
+  <span class="addition-label">Addition 2 · Case Cards · Proposed: expand existing Notable Prosecutions section</span>
+  <span class="section-label">Notable Federal Prosecutions</span>
+  <h2 class="section-title">Additional Cases</h2>
+  <div class="section-rule"></div>
+  <p class="prose">Drafted from the resume and the Muscle Media 2000 article. Four cases (Sullivan, Palasky &amp; Randall, Barron, Stallone/fountain-of-youth) are still awaiting your details and are not yet included.</p>
+
+  <div class="cases-grid">
+
+    <div class="case-card">
+      <span class="case-number">07</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Patrick Frega, et al.</h3>
+      <span class="case-meta">Public Corruption · Judicial Bribery</span>
+      <p class="case-desc">Three sitting California state court judges were charged alongside defense attorney Patrick Frega in a scheme in which Frega funneled payments, gifts, and financial benefits to the judges in exchange for favorable rulings. The corruption was a direct assault on the integrity of the state court system. No federal case had ever before charged sitting California state court judges — the prosecution established that even the authority of the bench provides no shelter from federal anti-corruption law.</p>
+      <span class="case-badge">First Federal Prosecution of Sitting California State Court Judges</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">08</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Maureen O'Connor</h3>
+      <span class="case-meta">Tax Fraud · Charitable Foundation Abuse</span>
+      <p class="case-desc">San Diego's first female mayor was charged with misusing the charitable foundation established by her late husband, fast-food mogul Robert Peterson. Over several years, she transferred millions from the foundation — funds intended for charitable purposes — to sustain gambling losses that ultimately exceeded $13 million. The prosecution raised difficult questions about accountability, addiction, and the obligations that attach to public trust even long after leaving office.</p>
+      <span class="case-badge">Former Mayor of San Diego</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">09</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Robert Morales</h3>
+      <span class="case-meta">Public Corruption · Federal Agency Bribery</span>
+      <p class="case-desc">The Internal Revenue Service is among the most feared institutions in American civil life — which makes the corruption of its agents all the more corrosive to public trust. The Morales prosecution produced the largest bribery conviction ever secured against an IRS agent, exposing a scheme in which Morales leveraged his audit authority to extract payments from taxpayers who feared the consequences of IRS scrutiny. The case made clear that federal anti-corruption enforcement extends to those who wield government power, not merely those who try to corrupt it.</p>
+      <span class="case-badge">Largest Bribery Case Ever Brought Against an IRS Agent</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">10</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Mario Saikhon</h3>
+      <span class="case-meta">Tax Fraud · Individual Criminal Prosecution</span>
+      <p class="case-desc">Tax cases are rarely described as historic, but the Saikhon prosecution earned that distinction. The individual criminal tax liability at issue was the largest ever prosecuted in the history of the Internal Revenue Service — a case requiring extraordinary financial complexity and an unrelenting commitment to following the money wherever it led. It demonstrated that the resources available even to the wealthiest defendants offer no protection against a methodical federal investigation.</p>
+      <span class="case-badge">Largest Individual Criminal Tax Prosecution in IRS History</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">11</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Saied Asefi Inanlou, et al.</h3>
+      <span class="case-meta">Arms Smuggling · National Security · Iran</span>
+      <p class="case-desc">At a time when the United States and Iran maintained no diplomatic relations, a smuggling ring based in Southern California was stripping critical components from F-14 Tomcat fighter jets — the backbone of Iran's air force — and channeling them to Tehran through an international network of middlemen. Components were, in several instances, taken directly from U.S. Navy carriers and maintenance facilities. The case exposed a dangerous gap in export controls and dismantled a procurement pipeline supplying America's adversaries with weapons-grade military hardware.</p>
+      <span class="case-badge">F-14 Components · Iran · Naval Security</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">12</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Jose Susumo Azano-Matsura, et al.</h3>
+      <span class="case-meta">Campaign Finance · Foreign Interference</span>
+      <p class="case-desc">Long before foreign interference in American elections became a national preoccupation, this prosecution established critical precedent at the local level. A wealthy Mexican national funneled hundreds of thousands of dollars in illegal contributions into San Diego's 2012 mayoral election through a network of straw donors, seeking to purchase influence over city governance from across the border. It was the first prosecution of a foreign national for making illegal contributions in a San Diego municipal election — an early warning about the vulnerability of local races to foreign money.</p>
+      <span class="case-badge">First Prosecution of a Foreign National for Illegal Contributions in a San Diego Election</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">13</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Metabolife International, et al.</h3>
+      <span class="case-meta">Corporate Fraud · Consumer Safety · Dietary Supplements</span>
+      <p class="case-desc">At its peak, Metabolife was the dominant company in the American dietary supplement industry, generating hundreds of millions in annual revenue from ephedra-based products. The federal case exposed a systematic pattern of concealment: the company had received reports of serious adverse health events — heart attacks, strokes, seizures — and failed to disclose them to the FDA as required by federal law, choosing revenue over the health of its customers. The prosecution contributed to the eventual regulatory ban on ephedra-containing supplements.</p>
+      <span class="case-badge">Largest Dietary Supplement Seller in the United States</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">14</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Richard Anthony Fitton</h3>
+      <span class="case-meta">Drug Smuggling · Controlled Substances</span>
+      <p class="case-desc">Fitton ran an international steroid trafficking network that concealed product in tire wells, false compartments, and fake gas tanks to move inventory across the U.S.–Mexico border. Halpern pursued him for years until Fitton pled guilty to three separate federal charges: smuggling under 18 U.S.C. § 545, unlawful introduction of a prescription drug in interstate commerce, and failure to declare illegal income. The case became the first federal prosecution of steroid distribution in the country — a foundational precedent that shaped all subsequent enforcement.</p>
+      <span class="case-badge">First Federal Prosecution Involving the Distribution of Steroids</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">15</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. David Jenkins, et al.</h3>
+      <span class="case-meta">Counterfeit Steroids · Drug Trafficking</span>
+      <p class="case-desc">The Jenkins investigation unraveled the largest counterfeit steroid ring ever uncovered in the United States — a sophisticated operation producing and distributing fake anabolic steroids on a mass scale, exposing thousands of users to unknown and potentially dangerous substances in place of the drugs they believed they were purchasing. The case built on a decade of accumulated expertise in steroid enforcement and represented the apex of Halpern's work dismantling the domestic steroid black market.</p>
+      <span class="case-badge">Largest Counterfeit Steroid Ring Uncovered in the United States</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">16</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. William Cambra</h3>
+      <span class="case-meta">Controlled Substances · Human Growth Hormone</span>
+      <p class="case-desc">Human Growth Hormone had circulated for years in athletic and anti-aging circles before federal law caught up with its illegal distribution. The Cambra prosecution was the first federal case ever brought involving the illegal distribution of HGH — establishing the legal framework that would govern enforcement in this area for years to come, and signaling that the government's reach extended to the full spectrum of performance-enhancing and so-called "fountain of youth" compounds being peddled outside legitimate medical channels.</p>
+      <span class="case-badge">First Federal Prosecution Involving Illegal Distribution of Human Growth Hormone</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">17</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Robert Bradley, et al.</h3>
+      <span class="case-meta">Tax Fraud · Charitable Foundation Abuse</span>
+      <p class="case-desc">The Bradley case broke new ground in federal tax enforcement: it was the first criminal tax prosecution ever brought against a charitable foundation in the United States. The case exposed the use of a nominally charitable organization as a vehicle for financial fraud — exploiting the tax-exempt status and public trust that society extends to charitable entities. The prosecution added an important new chapter to the government's toolkit for holding abusers of the charitable form accountable.</p>
+      <span class="case-badge">First Criminal Tax Case Brought Against a Charitable Foundation</span>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">18</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. A&amp;W Sales Corp., et al.</h3>
+      <span class="case-meta">Corporate Accountability · Food Safety · Public Health</span>
+      <p class="case-desc">When a Hepatitis A outbreak spread through grade schools across the Midwest, federal investigators traced the source to a food contractor that had cut corners in its production and distribution processes. The prosecution held a corporate defendant accountable for the direct human cost of food safety failures — children sickened, families disrupted, a community's trust in the school lunch program shaken. The case was a reminder that federal criminal enforcement reaches wherever corporate misconduct causes direct and measurable harm to real people.</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ADDITION 3: INTERNATIONAL -->
+<section id="international" class="section">
+  <span class="addition-label">Addition 3 · International Service · Proposed: new section between Cases and Writing</span>
+  <span class="section-label">Beyond the Courtroom</span>
+  <h2 class="section-title">Rule of Law Beyond Borders</h2>
+  <div class="section-rule"></div>
+  <p class="prose">Throughout his federal career, Halpern was called upon to carry American prosecutorial expertise to countries working to build or strengthen their own anti-corruption frameworks — work that took him across four continents and produced lasting institutional contributions.</p>
+
+  <div class="intl-grid">
+    <div class="intl-item">
+      <h3 class="intl-location">Tanzania, Zanzibar &amp; Ghana</h3>
+      <span class="intl-year">1993 · U.S. State Department / USIA</span>
+      <p class="intl-desc">Selected as the United States' first Professional-in-Residence posted to Africa under the USIA program. Worked with the Government of Tanzania on anti-corruption initiatives; drafted money laundering legislation for the Attorney General of Zanzibar; proposed structural reforms for the Tanzanian Supreme Court; and consulted with the Government of Ghana on the creation of a serious fraud office. Also authored a law review article for the University of Tanzania Law School on plea bargaining in the American criminal justice system.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Cyprus / Lebanon</h3>
+      <span class="intl-year">1998</span>
+      <p class="intl-desc">Negotiated the first bilateral working agreement on money laundering between the United States and Lebanon — a milestone in international financial enforcement cooperation that created a formal framework where none had previously existed.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Nepal</h3>
+      <span class="intl-year">2002</span>
+      <p class="intl-desc">Provided training to public prosecutors and law enforcement officials on corruption investigations and prosecutorial practices, contributing to institutional capacity-building efforts during a period of significant political challenge.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Philippines</h3>
+      <span class="intl-year">2017</span>
+      <p class="intl-desc">Advised Philippine law enforcement personnel on corruption investigations and anti-corruption enforcement practices — bringing four decades of American prosecutorial experience to bear on the institutional challenges facing law enforcement in the Philippines.</p>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+
+<!-- ADDITION 4: SERVICE & LEADERSHIP -->
+<section id="service" class="section cream">
+  <span class="addition-label">Addition 4 · Service &amp; Leadership · Proposed: after International, or folded into About section</span>
+  <span class="section-label">Institution Building</span>
+  <h2 class="section-title">Service &amp; Leadership</h2>
+  <div class="section-rule"></div>
+
+  <div class="service-block">
+    <h3 class="service-title">Founder — Border Research &amp; Technology Center</h3>
+    <span class="service-meta">U.S. Department of Justice, Treasury &amp; ONDCP · 1996</span>
+    <p class="service-desc">Halpern drafted the founding Memorandum of Understanding between the Department of Justice, the Department of the Treasury, and the Office of National Drug Control Policy that established the Border Research &amp; Technology Center — a federal initiative designed to apply technology and interagency coordination to the challenges of border security enforcement. He subsequently played an active role in the creation of the Designated Commuter Lane at the San Ysidro Port of Entry and the development of the San Diego Border Tactical Wireless Interoperability Testbed, and was an early proponent of the NIJ Rapid Pursuit Task Force. The Center became a model for evidence-based border enforcement infrastructure.</p>
+  </div>
+
+  <div class="service-block">
+    <h3 class="service-title">Adjunct Professor of Law</h3>
+    <span class="service-meta">University of San Diego School of Law · 1988–1995</span>
+    <p class="service-desc">For seven years while carrying a full federal caseload, Halpern taught upper-class and graduate law students on white-collar crime and corporate criminal responsibility — including theories of corporate liability, conflicts in multiple representation, and the outer limits of the attorney-client privilege in criminal investigations. He drew directly on active federal cases to teach what the law looks like when it meets the real world, and supervised law review articles on occasion.</p>
+  </div>
+</section>
+
+
+<!-- REVIEW NOTES -->
+<div id="notes" class="review-footer">
+  <h3>Open Questions for Your Review</h3>
+
+  <div class="review-q"><strong>CIA award (Honors Banner):</strong> Your message cut off at "Central..." — I've flagged it as pending. Confirm and I'll add it to the agency list.</div>
+  <div class="review-q"><strong>O'Connor card:</strong> The draft references the gambling addiction framing and the $13 million figure. Is that level of detail appropriate, or would you prefer a higher-level treatment given it was still a prosecution you brought?</div>
+  <div class="review-q"><strong>Case count:</strong> The resume has 20 prosecutions. The live site has 6. This draft adds 12 more. Four cases are still missing (below). Do you want all 20 on the site, or a curated selection?</div>
+  <div class="review-q"><strong>Naghdi / London bail-jump story:</strong> The About section of your live site already mentions a pharmacist who "jumped bail, fled to London, and was running a counterfeit prescription drug operation before being caught in an undercover sting — sentenced to 14 years." Is that Naghdi (listed on the resume as "Largest counterfeit Rx drug case prosecuted by the FDA")? If so, that story is the card.</div>
+  <div class="review-q"><strong>Service &amp; Leadership:</strong> Could alternatively be presented as two items in the About section's credential sidebar rather than a standalone section. Let me know which feels right.</div>
+
+  <p style="font-size:13px; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-top:36px; margin-bottom:16px;">Cases Still Awaiting Your Input</p>
+  <ul class="pending-list">
+    <li>U.S. v. Sullivan — federal agents / motorcycle gang corruption (case name, year, core facts, sentence, your role)</li>
+    <li>U.S. v. Palasky &amp; Randall — United Airlines extortion (full case name, year, scheme, outcome)</li>
+    <li>U.S. v. Barron — corrupt customs inspector (full facts, year, sentence)</li>
+    <li>Stallone / fountain-of-youth drugs — case name, year, the Stallone connection, outcome</li>
+    <li>U.S. v. Francis George Christie — Libya embargo (any additional detail beyond "first presidential embargo violation")</li>
+    <li>U.S. v. Javid Naghdi — confirm: is this the bail-jump / London / counterfeit Rx case in your About section?</li>
+  </ul>
+</div>
+
+</body>
+</html>
