@@ -1,0 +1,2202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phillip L.B. Halpern — Federal Prosecutor. Author. Voice on Justice.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0e1a2b;
+    --ink: #1a1a1a;
+    --gold: #b8943f;
+    --gold-light: #d4a843;
+    --cream: #f5f0e8;
+    --warm-white: #faf8f4;
+    --mid-gray: #6b6b6b;
+    --rule: #c8bfa8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'EB Garamond', Georgia, serif;
+    background: var(--warm-white);
+    color: var(--ink);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 60px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .nav-brand {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--gold);
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+
+  .nav-links a {
+    font-family: 'EB Garamond', Georgia, serif;
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* HERO */
+  #home {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 120px 10vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #home::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(135deg, transparent 0%, rgba(184,148,63,0.05) 100%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    padding-left: 32px;
+    position: relative;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    width: 20px; height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(52px, 7.5vw, 100px);
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.0;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-domain {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 44px;
+    font-style: italic;
+  }
+
+  .hero-rule { width: 72px; height: 2px; background: var(--gold); margin-bottom: 36px; }
+
+  .hero-tagline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(20px, 2.5vw, 30px);
+    color: rgba(255,255,255,0.88);
+    font-style: italic;
+    max-width: 620px;
+    line-height: 1.5;
+    margin-bottom: 36px;
+  }
+
+  .hero-intro {
+    font-size: clamp(16px, 1.4vw, 19px);
+    color: rgba(255,255,255,0.58);
+    max-width: 580px;
+    line-height: 1.85;
+    margin-bottom: 52px;
+  }
+
+  .hero-ctas { display: flex; gap: 20px; flex-wrap: wrap; }
+
+  .btn-primary {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 14px 36px;
+    border: 2px solid var(--gold);
+    transition: all 0.22s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+  .btn-ghost {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba(255,255,255,0.78);
+    padding: 14px 36px;
+    border: 2px solid rgba(255,255,255,0.22);
+    transition: all 0.22s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+  /* SECTIONS */
+  section { padding: 96px 10vw; }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .section-label::after { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+
+  .section-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.12;
+    margin-bottom: 40px;
+  }
+
+  .prose { font-size: clamp(17px, 1.4vw, 20px); line-height: 1.85; color: #2e2e2e; max-width: 760px; }
+  .prose p + p { margin-top: 22px; }
+
+  /* ABOUT */
+  #about { background: var(--warm-white); border-top: 1px solid var(--rule); }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-sidebar { position: sticky; top: 88px; }
+
+  .photo-placeholder {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(160deg, #1a2a3a 0%, #0e1a2b 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(184,148,63,0.3);
+    margin-bottom: 28px;
+    position: relative;
+  }
+  .photo-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid rgba(184,148,63,0.12);
+  }
+  .photo-placeholder-icon { font-size: 52px; color: rgba(184,148,63,0.35); margin-bottom: 10px; }
+  .photo-placeholder-text { font-size: 11px; letter-spacing: 0.15em; color: rgba(255,255,255,0.28); text-transform: uppercase; }
+
+  .sidebar-credentials { border-left: 2px solid var(--gold); padding-left: 18px; }
+  .credential-item { margin-bottom: 18px; }
+  .credential-label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid-gray); display: block; margin-bottom: 3px; }
+  .credential-value { font-family: 'Playfair Display', Georgia, serif; font-size: 15px; color: var(--navy); font-weight: 700; line-height: 1.3; }
+
+  .pull-quote {
+    border-left: 3px solid var(--gold);
+    padding: 22px 34px;
+    margin: 44px 0 0;
+    background: rgba(184,148,63,0.04);
+    max-width: 660px;
+  }
+  .pull-quote p {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(19px, 1.8vw, 25px);
+    font-style: italic;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  /* CASES */
+  #cases { background: var(--cream); border-top: 1px solid var(--rule); }
+
+  .cases-intro { max-width: 700px; margin-bottom: 64px; }
+
+  .cases-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+
+  /* ── HONORS BANNER ── */
+  .honors-banner {
+    background: var(--navy);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: 72px 10vw;
+    text-align: center;
+  }
+  .honors-numeral {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(80px, 13vw, 140px);
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    letter-spacing: -0.02em;
+  }
+  .honors-main-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(17px, 2.2vw, 24px);
+    color: rgba(255,255,255,0.92);
+    margin-top: 14px;
+    letter-spacing: 0.04em;
+    line-height: 1.4;
+  }
+  .honors-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  .honors-divider {
+    width: 1px;
+    height: 48px;
+    background: var(--gold);
+    margin: 32px auto;
+    opacity: 0.3;
+  }
+  .honors-also {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.38);
+    margin-bottom: 18px;
+  }
+  .honors-agencies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .honors-agency {
+    font-size: 12px;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.48);
+  }
+
+  /* ── INTERNATIONAL & SERVICE SECTIONS ── */
+  #international { background: var(--warm-white); border-top: 1px solid var(--rule); }
+  #service { background: var(--cream); border-top: 1px solid var(--rule); }
+
+  .intl-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 52px 72px;
+    margin-top: 56px;
+  }
+  .intl-item {
+    border-left: 2px solid var(--gold);
+    padding-left: 28px;
+  }
+  .intl-location {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .intl-year {
+    font-size: 12px;
+    letter-spacing: 0.17em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+  }
+  .intl-desc {
+    font-size: 16px;
+    line-height: 1.78;
+    color: var(--mid-gray);
+  }
+  .service-block {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--rule);
+    max-width: 760px;
+  }
+  .service-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .service-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .service-meta {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 16px;
+  }
+  .service-desc { font-size: 17px; line-height: 1.82; color: var(--mid-gray); }
+
+  .case-card {
+    background: var(--warm-white);
+    padding: 40px 34px;
+    position: relative;
+    transition: background 0.2s;
+  }
+  .case-card:hover { background: #fff; }
+
+  .case-number {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: rgba(184,148,63,0.1);
+    position: absolute;
+    top: 20px; right: 24px;
+    line-height: 1;
+    user-select: none;
+  }
+
+  .case-rule { width: 28px; height: 2px; background: var(--gold); margin-bottom: 18px; }
+
+  .case-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+    line-height: 1.25;
+    padding-right: 40px;
+  }
+
+  .case-meta {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .case-desc { font-size: 15.5px; line-height: 1.78; color: #363636; }
+
+  /* WRITING */
+  #writing { background: var(--navy); border-top: 2px solid var(--gold); }
+  #writing .section-title { color: #fff; }
+  #writing .prose { color: rgba(255,255,255,0.65); }
+
+  .writing-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-top: 56px;
+  }
+
+  .writing-category-label {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(184,148,63,0.28);
+  }
+
+  .writing-item { padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .writing-item:last-child { border-bottom: none; }
+
+  .writing-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 5px;
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .writing-publication { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; }
+  .writing-teaser { font-size: 14.5px; color: rgba(255,255,255,0.48); margin-top: 7px; line-height: 1.6; }
+
+  /* SPEAKING */
+  #speaking { background: var(--warm-white); border-top: 1px solid var(--rule); }
+
+  .speaking-intro { max-width: 680px; margin-bottom: 0; }
+
+  .speaking-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 52px;
+  }
+
+  .topic-card {
+    padding: 34px 30px;
+    border: 1px solid var(--rule);
+    background: white;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .topic-card:hover { border-color: var(--gold); box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+
+  .topic-icon { font-size: 26px; margin-bottom: 14px; display: block; }
+
+  .topic-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.25;
+  }
+
+  .topic-desc { font-size: 15px; line-height: 1.7; color: var(--mid-gray); }
+
+  /* CONTACT */
+  #contact { background: var(--cream); border-top: 1px solid var(--rule); text-align: center; }
+  #contact .section-label { justify-content: center; }
+  #contact .section-label::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+  #contact .section-label::after { display: none; }
+  #contact .section-title { margin: 0 auto 24px; }
+
+  .contact-tagline {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(17px, 2vw, 23px);
+    font-style: italic;
+    color: var(--mid-gray);
+    max-width: 520px;
+    margin: 0 auto 48px;
+    line-height: 1.55;
+  }
+
+  .contact-info { display: flex; gap: 52px; justify-content: center; flex-wrap: wrap; margin-bottom: 52px; }
+  .contact-item { text-align: center; }
+  .contact-item-label { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 8px; }
+  .contact-item-value { font-family: 'Playfair Display', Georgia, serif; font-size: 17px; color: var(--navy); text-decoration: none; font-weight: 700; }
+  .contact-item-value:hover { color: var(--gold); }
+  .domain-note { font-size: 13px; color: var(--mid-gray); font-style: italic; margin-top: 5px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    padding: 36px 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    border-top: 2px solid var(--gold);
+  }
+  .footer-name { font-family: 'Playfair Display', Georgia, serif; color: rgba(255,255,255,0.65); font-size: 15px; }
+  .footer-name span { color: var(--gold); }
+  .footer-note { font-size: 12px; color: rgba(255,255,255,0.28); letter-spacing: 0.05em; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.7s ease both 0.1s; }
+  .hero-name    { animation: fadeUp 0.7s ease both 0.25s; }
+  .hero-domain  { animation: fadeUp 0.7s ease both 0.35s; }
+  .hero-rule    { animation: fadeUp 0.6s ease both 0.45s; }
+  .hero-tagline { animation: fadeUp 0.7s ease both 0.55s; }
+  .hero-intro   { animation: fadeUp 0.7s ease both 0.65s; }
+  .hero-ctas    { animation: fadeUp 0.7s ease both 0.75s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 1200px) {
+    .cases-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { gap: 14px; }
+    #home, section { padding-left: 6vw; padding-right: 6vw; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .about-sidebar { position: static; }
+    .photo-placeholder { max-width: 280px; }
+    .writing-columns { grid-template-columns: 1fr; gap: 44px; }
+    .intl-grid { grid-template-columns: 1fr; gap: 40px; }
+    .honors-banner { padding: 56px 6vw; }
+    footer { flex-direction: column; text-align: center; }
+  }
+  /* HAMBURGER MENU */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 200;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  @media (max-width: 580px) {
+    .nav-hamburger { display: flex; }
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0; right: 0;
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      flex-direction: column;
+      gap: 0;
+      padding: 8px 0 16px;
+      z-index: 150;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-links li:last-child { border-bottom: none; }
+    .nav-links a {
+      display: block;
+      padding: 14px 28px;
+      font-size: 13px;
+    }
+    #home { padding-top: 96px; }
+    .contact-info { flex-direction: column; gap: 24px; }
+    .cases-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ACKNOWLEDGMENTS */
+  #acknowledgments {
+    background: var(--warm-white);
+    border-top: 2px solid var(--gold);
+  }
+  .ack-intro {
+    max-width: 740px;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--charcoal);
+    margin-bottom: 52px;
+  }
+  .ack-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 64px;
+  }
+  .ack-group {
+    margin-bottom: 36px;
+  }
+  .ack-group-label {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .ack-agency {
+    margin-bottom: 20px;
+  }
+  .ack-agency-name {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .ack-names {
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--charcoal);
+  }
+  .ack-full {
+    grid-column: 1 / -1;
+  }
+  @media (max-width: 700px) {
+    .ack-columns { grid-template-columns: 1fr; }
+    .ack-full { grid-column: 1; }
+  }
+</style>
+
+<!-- SCHEMA MARKUP FOR PRESS & MEDIA SECTION -->
+<!-- Structured data that helps AI search engines understand and verify case attributions -->
+
+<!-- PROFILE: PHILLIP HALPERN - TIMES OF SAN DIEGO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "The Story Behind Phillip Halpern's Viral U-T Piece Bashing AG William Barr",
+  "alternativeHeadline": "Retired Federal Prosecutor Reflects on DOJ Independence, Career Ethics, and Public Voice",
+  "description": "Profile by Ken Stone examining the context behind Halpern's viral op-ed critique of Attorney General William Barr, his wife's influence, fears of DOJ political interference in the Duncan Hunter case, and his reflections on prosecutorial ethics and threats to American democracy.",
+  "author": {
+    "@type": "Person",
+    "name": "Ken Stone"
+  },
+  "datePublished": "2020-10-16",
+  "dateModified": "2020-10-17",
+  "publication": {
+    "@type": "Organization",
+    "name": "Times of San Diego"
+  },
+  "mentions": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern",
+    "jobTitle": "Retired Assistant U.S. Attorney",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "United States Attorney's Office, Southern District of California"
+    }
+  }
+}
+</script>
+
+<!-- CASE 1: SAIED ASEFI INANOU / F-14 SMUGGLING - M MAGAZINE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Diabolical Dealing: Selling 'Great Satan's' Guns to the Ayatollah",
+  "description": "Investigative report examining Iranian procurement of U.S. military equipment through civilian intermediaries and military contractors, detailing the network's sophistication and federal enforcement response.",
+  "datePublished": "1985-12",
+  "publication": {
+    "@type": "Organization",
+    "name": "M Magazine (The Civilized Man)"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Saied Asefi Inanou",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "International Arms Smuggling"
+  }
+}
+</script>
+
+<!-- CASE 2: SAIED ASEFI INANOU / F-14 SMUGGLING - MILITARY LOGISTICS FORUM -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "The Iranian Connection",
+  "description": "Special report on Iranian infiltration of U.S. military supply system, documenting how foreign intelligence exploited security vulnerabilities in Navy logistics and procurement operations.",
+  "datePublished": "1985-11",
+  "publication": {
+    "@type": "Organization",
+    "name": "Military Logistics Forum"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Saied Asefi Inanou",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "International Arms Smuggling"
+  }
+}
+</script>
+
+<!-- CASE 3: FRANCIS GEORGE CHRISTIE / LIBYA EQUIPMENT SMUGGLING -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "The Invisible Man: Undercover in San Diego, He Breaks a Smuggling Link to Libya",
+  "description": "Profile of undercover operation infiltrating suspected smuggling network diverting U.S. equipment to embargoed nation. Investigation uncovering covert arms trafficking and sanctions violations.",
+  "datePublished": "1987-03",
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Magazine"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Francis George Christie",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Equipment Smuggling"
+  }
+}
+</script>
+
+<!-- CASE 4: JAVID NAGHDI / PHARMACEUTICAL & ARMS TRAFFICKING -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Pill Pirates",
+  "description": "National coverage of criminal network trafficking prescription pharmaceuticals and military equipment to foreign intelligence services. Case establishing federal enforcement precedent.",
+  "datePublished": "1990-11-04",
+  "publication": {
+    "@type": "Organization",
+    "name": "Newsweek"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Javid Naghdi",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Transnational Smuggling"
+  }
+}
+</script>
+
+<!-- CASE 5: JUDGE PATRICK FREGA / JUDICIAL CORRUPTION -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Tempting Justice",
+  "description": "Profile of aggressive prosecution bringing down corrupt judge; examines judicial integrity crisis and implications for San Diego legal community.",
+  "datePublished": "1996-12",
+  "publication": {
+    "@type": "Organization",
+    "name": "California Lawyer"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Brae Carlen"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Patrick Frega",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Judicial Corruption"
+  }
+}
+</script>
+
+<!-- CASE 6: STEROID SMUGGLING - LA TIMES MAGAZINE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Confessions of a Steroid Smuggler: When the Quest for Big Muscles Turns Into a Passion for Big Money",
+  "description": "In-depth investigative profile by John Eisendrath of major steroid trafficking networks in Southern California. Federal enforcement against black-market distribution and professional athletes.",
+  "datePublished": "1988-04-24",
+  "publication": {
+    "@type": "Organization",
+    "name": "Los Angeles Times Magazine"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "John Eisendrath"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. David Jenkins",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Steroid Trafficking"
+  }
+}
+</script>
+
+<!-- CASE 7: STEROID PROSECUTIONS - SPORTS ILLUSTRATED -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Steroid Explosion",
+  "description": "National magazine coverage of steroid epidemic in professional athletics and body-building. Federal law enforcement response and prosecution strategy.",
+  "datePublished": "1985-05-13",
+  "publication": {
+    "@type": "Organization",
+    "name": "Sports Illustrated"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Steroid Trafficking Networks",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Steroid Trafficking"
+  }
+}
+</script>
+
+<!-- CASE 8: STEROID PROSECUTIONS - NEWSWEEK (COUNTERFEITER) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Confessions of a Counterfeiter",
+  "description": "Profile of sophisticated counterfeit pharmaceutical manufacturing and distribution scheme. Federal investigation and prosecution of major trafficking ring.",
+  "datePublished": "1990-11-05",
+  "publication": {
+    "@type": "Organization",
+    "name": "Newsweek"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Counterfeit Pharmaceutical Network",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Pharmaceutical Counterfeiting"
+  }
+}
+</script>
+
+<!-- CASE 9: STEROID PROSECUTIONS - MUSCLE MEDIA 2000 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Steroids and the Law",
+  "description": "Comprehensive overview of federal steroid prosecution landscape, prosecutorial strategy, and role in establishing enforcement framework for anabolic steroid trafficking.",
+  "datePublished": "1993-08",
+  "publication": {
+    "@type": "Organization",
+    "name": "Muscle Media 2000"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Steroid Trafficking Cases",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Steroid Trafficking"
+  }
+}
+</script>
+
+<!-- CASE 10: STEROID PROSECUTIONS - CALIFORNIA LAWYER -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Most Respected Lawyers",
+  "description": "Professional profile examining prosecutorial career in steroid cases and role in establishing federal enforcement precedent in drug trafficking prosecution.",
+  "datePublished": "1996-12",
+  "publication": {
+    "@type": "Organization",
+    "name": "California Lawyer"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Steroid Trafficking Cases",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Steroid Trafficking"
+  }
+}
+</script>
+
+<!-- CASE 11: DAN DUCHAINE / UNDERGROUND STEROID HANDBOOK -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Underground Steroid Handbook II",
+  "description": "Clandestine publication by Dan Duchaine detailing steroid chemistry, synthesis, and underground production methods. Subject of federal prosecution for distribution.",
+  "author": {
+    "@type": "Person",
+    "name": "Dan Duchaine"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Dan Duchaine",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Distribution of Clandestine Publication"
+  }
+}
+</script>
+
+<!-- CASE 12: HILMA MARIE WITTE / HOMICIDE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NewsArticle",
+  "headline": "Mother, son arrested in elderly woman's death",
+  "description": "Newspaper report on arrest of Helma Marie Witte, 36, and son John David Witte, 15, in connection with death of 74-year-old Elaine Witte in Trail Creek, Indiana.",
+  "datePublished": "1964-11-09",
+  "publication": {
+    "@type": "Organization",
+    "name": "The San Diego Union"
+  },
+  "mentions": {
+    "@type": "LegalCase",
+    "name": "United States v. Helma Marie Witte and John David Witte",
+    "prosecutorName": "Phillip L.B. Halpern",
+    "prosecutorRole": "Assistant U.S. Attorney",
+    "jurisdiction": "Southern District of California",
+    "caseType": "Homicide"
+  }
+}
+</script>
+
+<!-- SCHOLARLY ANALYSIS: JENKINS-DUCHAINE-DILLON STEROID RING -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Dawn of the War on Steroids: A History of Federal Steroid Prosecution (1984–1990)",
+  "author": {
+    "@type": "Person",
+    "name": "Daniel L. Rosenke"
+  },
+  "description": "Comprehensive scholarly analysis documenting the origins of federal steroid enforcement, the largest anabolic steroid trafficking ring in U.S. history, and the prosecutorial strategy that established the framework for modern drug policy.",
+  "datePublished": "2023-09-25",
+  "publication": {
+    "@type": "Organization",
+    "name": "The International Journal of the History of Sport"
+  },
+  "about": [
+    {
+      "@type": "LegalCase",
+      "name": "United States v. David Jenkins et al.",
+      "prosecutors": [
+        {
+          "@type": "Person",
+          "name": "Phillip L.B. Halpern",
+          "jobTitle": "Assistant U.S. Attorney"
+        },
+        {
+          "@type": "Person",
+          "name": "Dennis Degan",
+          "jobTitle": "FDA Compliance Officer / National Steroid Investigation Coordinator"
+        }
+      ],
+      "jurisdiction": "Southern District of California",
+      "caseType": "Steroid Trafficking - Landmark Federal Prosecution",
+      "significance": "Established federal enforcement framework for anabolic steroid prosecution; led to Anti-Drug Abuse Act (1988) and Anabolic Steroids Control Act (1990)"
+    }
+  ],
+  "keywords": [
+    "steroid trafficking",
+    "federal prosecution",
+    "David Jenkins",
+    "Dan Duchaine",
+    "William Dillon",
+    "Phillip Halpern",
+    "drug enforcement policy",
+    "anabolic steroids",
+    "criminal investigation",
+    "Southern District of California"
+  ]
+}
+</script>
+
+
+<!-- OP-EDS & COMMENTARY: SCHEMA MARKUP -->
+
+<!-- Op-Ed 1: Democracy Died 2020 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "2020 is the year our democracy died",
+  "description": "In 2021, let's leave our echo chambers, share a reality and have an honest discussion",
+  "datePublished": "2020-12-30",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "democracy, election, political division, American politics"
+}
+</script>
+
+<!-- Op-Ed 2: Voter Fraud Allegations False -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "As a career federal prosecutor I can tell you the allegations of widespread voter fraud are false",
+  "description": "DOJ has not prosecuted a single case of voter fraud in Southern California.",
+  "datePublished": "2020-12-02",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "voter fraud, election integrity, federal prosecution, 2020 election"
+}
+</script>
+
+<!-- Op-Ed 3: Trump Pardons Cunningham & Hunter -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "I prosecuted Duke Cunningham and Duncan Hunter. Trump's pardons of them are shameful.",
+  "description": "Two of the most shameful pardons by President Donald Trump were for disgraced former congressmen.",
+  "datePublished": "2021-02-02",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "congressional corruption, pardons, Duke Cunningham, Duncan Hunter, federal prosecution"
+}
+</script>
+
+<!-- Op-Ed 4: Barr Justice Department -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "I won't work in Attorney General William Barr's Justice Department any longer",
+  "description": "I proudly served 19 different attorneys general and six different presidents. Barr has turned his back on the rule of law.",
+  "datePublished": "2020-10-14",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "DOJ independence, prosecutorial ethics, rule of law, Attorney General Barr"
+}
+</script>
+
+<!-- Op-Ed 5: American Flag as Unifying Symbol -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "The American flag should be a unifying symbol that transcends politics",
+  "description": "For more than 200 years, the flag has played an important role in our nation's history.",
+  "datePublished": "2021-07-02",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "patriotism, national unity, American flag, political polarization"
+}
+</script>
+
+<!-- Op-Ed 6: Unity After 9/11 Impossible -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "The fleeting unity following 9/11 is impossible in today's political climate. Here's why.",
+  "description": "It was my naive belief that the January 6th assault on our nation's Capitol could serve as a similar rallying point unifying our deeply fractured country.",
+  "datePublished": "2021-12-16",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "national unity, January 6, political division, media ecosystem, democracy"
+}
+</script>
+
+<!-- Op-Ed 7: ICE Deportations Removing Best and Brightest -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "Opinion: ICE deportations are kicking out some of the best and brightest",
+  "description": "On Saturday, April 12, immigration agents detained Dr. Rubeliz Bolivar at an airport in south Texas. She is an emergency room physician in McAllen, Texas.",
+  "datePublished": "2026-05-02",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "Times of San Diego"
+  },
+  "keywords": "immigration policy, ICE enforcement, physician shortage, talent and merit, medical professionals"
+}
+</script>
+
+<!-- PERSONAL ESSAYS: SCHEMA MARKUP -->
+
+<!-- Personal Essay 1: Blood Cancer and Cycling -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "My blood cancer didn't keep me off my bike for long, yet full recovery remains unclear.",
+  "description": "While the diagnosis and treatment of rare forms of cancer are cutting-edge medical science, they frustratingly also have a fair dollop of 'art' thrown into the mix.",
+  "datePublished": "2023-11-26",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "blood cancer, essential thrombocythemia, stem cell transplant, medical resilience, cycling"
+}
+</script>
+
+<!-- Personal Essay 2: Mother-in-Law and Nazi Resistance -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "My mother-in-law was brilliant, funny and kind. Plus she fought Nazis as a young woman.",
+  "description": "Elly steadfastly refused to be defined by the vicissitudes that marked her early years.",
+  "datePublished": "2021-05-07",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "World War II, Dutch Resistance, family history, courage, legacy"
+}
+</script>
+
+<!-- Personal Essay 3: Surviving Illness and Remission -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Opinion: Surviving an often-fatal illness let me see my life with clarity",
+  "description": "After years of living under the shadow of a fatal leukemia diagnosis, remission arrives not with relief, but with weight.",
+  "datePublished": "2026-01-16",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "leukemia, remission, mortality, resilience, gratitude, life perspective"
+}
+</script>
+
+<!-- Personal Essay 4: Massive Navy Redevelopment Threatens San Diego -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "Opinion: Massive Redevelopment of Navy Property Threatens San Diego's Future",
+  "description": "In 1984, I received job offers from the U.S. Attorneys' offices in both Los Angeles and San Diego.",
+  "datePublished": "2021-08-07",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "Times of San Diego"
+  },
+  "keywords": "urban development, San Diego, Navy property, environmental impact, quality of life"
+}
+</script>
+
+<!-- Personal Essay 5: Navy Stealth Redevelopment Project -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OpinionNewsArticle",
+  "headline": "The Navy is launching a major redevelopment project, and many San Diegans aren't paying attention",
+  "description": "The U.S. Navy has embraced 'stealth' technology with the launch of three Zumwalt class warships.",
+  "datePublished": "2021-07-13",
+  "author": {
+    "@type": "Person",
+    "name": "Phillip L.B. Halpern"
+  },
+  "publication": {
+    "@type": "Organization",
+    "name": "San Diego Union-Tribune"
+  },
+  "keywords": "Navy development, Old Town San Diego, Presidio Park, civic planning, traffic impact"
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#home">Phillip L.B. Halpern</a>
+  <button class="nav-hamburger" id="navToggle" aria-label="Open navigation menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#cases">Cases</a></li>
+    <li><a href="#international">International</a></li>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#acknowledgments">Team</a></li>
+    <li><a href="#writing">Commentaries</a></li>
+    <li><a href="#press-media">Press & Media</a></li>
+    <li><a href="#personal">Personal</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <p class="hero-eyebrow">Assistant United States Attorney · 36 Years · Southern District of California</p>
+  <h1 class="hero-name">Phillip<br>L.B. Halpern</h1>
+  <p class="hero-domain">PhillipHalpern.com</p>
+  <div class="hero-rule"></div>
+  <p class="hero-tagline">Three decades pursuing the powerful.<br>A lifetime defending the rule of law.</p>
+  <p class="hero-intro">
+    Few prosecutors have sat at the intersection of federal corruption, national politics, and the American justice system — for as long, or with as much consequence — as Phillip Halpern. From the halls of the U.S. Congress to the highest levels of the CIA, his career defined what it means to hold power accountable.
+  </p>
+  <div class="hero-ctas">
+    <a href="#cases" class="btn-primary">Notable Prosecutions</a>
+    <a href="#contact" class="btn-ghost">Speaking &amp; Inquiries</a>
+  </div>
+</section>
+
+<!-- HONORS BANNER -->
+<div class="honors-banner">
+  <span class="honors-numeral">7</span>
+  <p class="honors-main-title">Department of Justice Distinguished Service Awards</p>
+  <p class="honors-subtitle">The Department's Second-Highest Honor &nbsp;&middot;&nbsp; Received on an Unprecedented Seven Separate Occasions</p>
+  <div class="honors-divider"></div>
+  <p class="honors-also">Also Recognized By</p>
+  <div class="honors-agencies">
+    <span class="honors-agency">Federal Bureau of Investigation</span>
+    <span class="honors-agency">Internal Revenue Service</span>
+    <span class="honors-agency">U.S. Customs Service</span>
+    <span class="honors-agency">Food &amp; Drug Administration</span>
+    <span class="honors-agency">Central Intelligence Agency</span>
+    <span class="honors-agency">Defense Criminal Investigative Service</span>
+    <span class="honors-agency">U.S. Secret Service</span>
+    <span class="honors-agency">Environmental Protection Agency</span>
+    <span class="honors-agency">U.S. Postal Service</span>
+    <span class="honors-agency">Naval Criminal Investigative Service</span>
+    <span class="honors-agency">GSA Office of Inspector General</span>
+    <span class="honors-agency">DOD Office of Inspector General</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-sidebar">
+      <div class="photo-container" style="width:85%;margin-bottom:28px;">
+        <img src="data:image/jpeg;base64,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" alt="Phillip L.B. Halpern" style="width:100%;display:block;border:1px solid rgba(184,148,63,0.3);">
+      </div>
+      <div class="sidebar-credentials">
+        <div class="credential-item">
+          <span class="credential-label">Position</span>
+          <span class="credential-value">Assistant U.S. Attorney (Ret.)</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">&nbsp;</span>
+          <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Chief, Major Frauds &amp; Special Prosecutions</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">&nbsp;</span>
+          <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Special Assistant to the U.S. Attorney</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">&nbsp;</span>
+          <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Senior Litigation Counsel</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">&nbsp;</span>
+          <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Senior Legal Counsel</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Federal Service</span>
+          <span class="credential-value">36 Years</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">District</span>
+          <span class="credential-value">Southern District of California</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Trial Record</span>
+          <span class="credential-value">Undefeated</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Major Prosecutions</span>
+          <span class="credential-value" style="line-height:1.6;">
+            Two sitting members of Congress<br>
+            Executive Director of the CIA<br>
+            Lead Prosecutor, Operation Bullpen<br>
+            Nation's first large-scale steroid prosecutions
+          </span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Specialties</span>
+          <span class="credential-value">Public Corruption · Campaign Finance · Complex Frauds</span>
+        </div>
+        <div class="credential-item">
+          <span class="credential-label">Commentary</span>
+          <span class="credential-value">Op-Ed Contributor, San Diego Union-Tribune</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="section-label">About</p>
+      <h2 class="section-title">A Career at the<br>Edge of Power</h2>
+
+      <div class="prose">
+        <p>
+          Phillip L.B. Halpern's federal career began not with a landmark case but with a phone call. In November 1984 — weeks after joining the U.S. Attorney's Office for the Southern District of California — he took a duty call from a customs inspector at the Tecate Port of Entry who had detained a smuggler carrying unfamiliar medications. The DEA said they weren't controlled substances. Should he release him? When the inspector read the labels over the phone, Halpern recognized them immediately: anabolic steroids. Within three years, he had indicted 34 defendants in some of the nation's first major steroid prosecutions — a ring that controlled an estimated 70 percent of the illegal steroid black market and moved $2 to $4 million in product annually.
+        </p>
+        <p>
+          That case set the template for what followed. For 36 years, Halpern pursued the cases other offices found too complex, too politically sensitive, or too novel to prosecute. He indicted an international network smuggling F-14 fighter jet components to Iran &mdash; parts stolen directly from U.S. Navy carriers and maintenance facilities. He prosecuted the first violation of the Reagan administration's Libya embargo. He convicted a pharmacist who had jumped bail, fled to London, and was running a counterfeit prescription drug operation before being caught in an undercover sting &mdash; sentenced to 14 years. He indicted co-conspirators in a scheme to smuggle injectable sheep-placenta extract and cow-brain extract into the United States as "fountain of youth" substances touted by Sylvester Stallone.
+        </p>
+        <p>
+          The cases that defined his later career were the ones that defined an era. The investigation into Duke Cunningham began with a newspaper story about a suspiciously inflated real estate transaction. Within weeks, Halpern's team had executed search warrants on Cunningham's home, his defense contractor's office, and the "Duke-Stir" &mdash; a yacht the contractor had moored in Washington D.C. for the Congressman to live on, renamed in his honor. Cunningham pleaded guilty five months later. The Duncan Hunter investigation began similarly &mdash; another Union-Tribune tip, another search, this time of a sitting Congressman's Capitol Hill office, one of the most rarely executed actions in federal law enforcement. Hunter fought the charges for over a year before his wife agreed to testify against him.
+        </p>
+        <p>
+          Over four decades, Halpern maintained an undefeated trial record—a reflection not merely of courtroom skill but of the prosecutorial judgment required to distinguish cases that would withstand the crucible of trial from those requiring different resolution.
+        </p>
+        <p>
+          Since leaving federal service, Halpern has written and spoken widely on DOJ independence, prosecutorial ethics, and the weaponization of law enforcement for political ends. His commentary in the San Diego Union-Tribune reflects the thinking of a lawyer who spent four decades not theorizing about justice &mdash; but delivering it.
+        </p>
+      </div>
+
+      <div class="pull-quote">
+        <p>"Our very democracy is at risk when criminals win elections by weaponizing the tropes of fake news and the deep state."</p>
+        <p style="font-size:14px;color:var(--mid-gray);margin-top:12px;font-style:normal;font-family:'EB Garamond',Georgia,serif;letter-spacing:0.05em;">— Government's Sentencing Memorandum, <em>United States v. Duncan D. Hunter</em> (2020)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="cases-intro">
+    <p class="section-label">Cases &amp; Experience</p>
+    <h2 class="section-title">Notable Federal Prosecutions</h2>
+    <p class="prose">The cases that defined a career — and, in several instances, reshaped American political history. Each prosecution tested a single enduring principle: that no one in the United States is above the law.</p>
+  </div>
+
+  <div class="cases-grid">
+
+    <div class="case-card">
+      <span class="case-number">01</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Randy "Duke" Cunningham</h3>
+      <span class="case-meta">Bribery · Public Corruption · U.S. Congress</span>
+      <p class="case-desc">The investigation began with a newspaper story about a suspiciously inflated real estate transaction. Within weeks, search warrants had been executed on the war hero's home, his defense contractor's office, and the "Duke-Stir" — a yacht the contractor had moored at Washington's Capitol Yacht Club to serve as the Congressman's home. What emerged was one of the largest congressional bribery cases in American history: more than $2.4 million in bribes in the form of cash, a Rolls-Royce, antiques, lavish vacations, and prostitutes in a hot tub — a corruption so brazen that it required its own price list, which prosecutors dubbed the "bribe menu."</p>
+      <p class="case-desc" style="margin-top:10px;">Cunningham pleaded guilty five months after the first newspaper story appeared, wept on the steps of the courthouse, and resigned from Congress. Sentenced to over eight years in federal prison — the longest sentence ever imposed at that time on a sitting member of Congress — the case serves as a reminder that public adulation is no shield from accountability. Although he had completed his prison sentence, President Trump pardoned Cunningham.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Jason Forge, Sanjay Bhandari, and Valerie Chu.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">02</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Duncan Hunter</h3>
+      <span class="case-meta">Campaign Finance Fraud &middot; Wire Fraud &middot; U.S. Congress</span>
+      <p class="case-desc">Congressman Duncan Hunter and his wife Margaret financed a lifestyle well beyond their means by systematically diverting campaign funds for personal use. Over a seven-year period, the couple overdrew their personal bank account more than a thousand times, incurring tens of thousands of dollars in fees, while misappropriating more than $250,000 in contributions from supporters. The stolen funds paid for a wide range of personal expenses—from luxury travel and extramarital affairs to everyday purchases such as groceries, school tuition, and dining throughout San Diego.</p>
+      <p class="case-desc" style="margin-top:10px;">The case took on broader significance because of Hunter’s response. Rather than accept responsibility, he publicly attacked federal law enforcement and prosecutors, invoking a “deep state” conspiracy and using that narrative to secure re-election in 2018 while under indictment. The prosecution highlighted the risk posed when criminal conduct is deflected through misinformation and political rhetoric. Hunter ultimately pleaded guilty, was sentenced to federal prison, and later received a presidential pardon—bringing the case to an end as consequential as its beginning.</p>
+      <p style="margin-top:16px;"><a href="PhillipHalpern_Sentencing_Memo_Hunter.pdf" style="font-family:'EB Garamond',Georgia,serif;font-size:13px;letter-spacing:0.1em;color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(184,148,63,0.4);padding-bottom:2px;">&#8659; Read the Government's Sentencing Memorandum</a></p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Emily Allen and Mark Conover</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">03</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Kyle "Dusty" Foggo, et al.</h3>
+      <span class="case-meta">Fraud &middot; Conspiracy &middot; CIA Executive Director</span>
+      <p class="case-desc">Kyle "Dusty" Foggo rose to become the Executive Director of the Central Intelligence Agency—the third-highest position in the agency and the official responsible for its day-to-day operations—before a federal investigation dismantled his career. The case required executing a search warrant inside CIA headquarters, in Foggo's own office, one of the most secure areas of the facility and among the most extraordinary law enforcement actions ever taken against a sitting senior intelligence official.</p>
+      <p class="case-desc" style="margin-top:10px;">Connected to the same web of defense contractor corruption that ensnared Duke Cunningham, Foggo was convicted of fraud for steering CIA contracts to a longtime friend in exchange for personal benefits, including luxury travel and accommodations. Because the contracts at issue involved highly classified programs, the defense attempted to "gray mail" the government by forcing disclosure of sensitive information. The prosecution navigated those risks while preserving national security, and the conviction established that even the highest levels of the intelligence community are not beyond the reach of federal criminal law.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Jason Forge and Valerie Chu.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">04</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Gregory Marino (“Operation Bullpen”)</h3>
+      <span class="case-meta">Fraud &middot; Forgery &middot; Largest Sports Memorabilia Conspiracy in U.S. History</span>
+      <p class="case-desc">Operation Bullpen exposed the largest counterfeit sports memorabilia operation in U.S. history—a sprawling scheme that flooded the market with forged autographs spanning the sports world, from Babe Ruth and Joe DiMaggio to Michael Jordan and Joe Montana, as well as celebrities and public figures as disparate as the Beatles, Bob Dylan, and even Mother Teresa. Tens of thousands of fake baseballs, jerseys, photographs, guitars, and novelty items were sold through dealers, auction houses, and seemingly legitimate authentication channels.</p>
+      <p class="case-desc" style="margin-top:10px;">Skilled forgers produced convincing signatures in bulk while conspirators generated fraudulent certificates of authenticity, allowing the fakes to command premium prices from collectors who believed they were acquiring genuine artifacts. The case exposed a system built on trust, where authenticity itself became just another commodity—and demonstrated how easily that trust could be manipulated when the safeguards of the marketplace failed.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">05</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Floyd Landis</h3>
+      <span class="case-meta">Wire Fraud &middot; Cycling &middot; Tour de France</span>
+      <p class="case-desc">This prosecution followed one of cycling’s most dramatic rises and falls. After being stripped of his 2006 Tour de France title for doping, Floyd Landis launched a high-profile defense effort, soliciting hundreds of thousands of dollars from supporters with assurances that the funds would be used to prove his innocence and clear his name. The government established that those representations were false, and that donor funds were diverted to personal expenses.</p>
+      <p class="case-desc" style="margin-top:10px;">Landis ultimately pleaded guilty. The case carried a certain irony: a cyclist undone first by substances moving through his bloodstream and later by money moving through electronic wires. His eventual admission of doping helped expose a broader performance-enhancement conspiracy in professional cycling, implicating Lance Armstrong and contributing to a reckoning that reshaped the sport.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">06</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Saied Asefi Inanlou, et al.</h3>
+      <span class="case-meta">National Security &middot; Arms Smuggling &middot; Iran</span>
+      <p class="case-desc">Following the fall of the Shah, the Islamic Republic of Iran faced a critical vulnerability: its air force depended on American-made F-14 Tomcats, and spare parts had become unavailable after the severance of U.S.-Iran relations. Between 1981 and 1985, the defendants orchestrated a scheme to steal sensitive military components—including navigation system gimbals and missile-related parts—from aircraft carriers, maintenance facilities, and supply depots in California, Virginia, Washington State, and the Philippines.</p>
+      <p class="case-desc" style="margin-top:10px;">The stolen components were routed through front companies, mislabeled as benign goods, and shipped through international channels to Iran. The investigation uncovered a vast network of at least 20 co-conspirators and shipments worth millions of dollars. The case resulted in substantial prison sentences and prompted lasting reforms in how the Navy safeguards sensitive military equipment, underscoring the national security risks posed by insider theft and illicit export schemes.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA C. Stevens Crandall.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">07</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Maureen O'Connor</h3>
+      <span class="case-meta">Tax Fraud &middot; Charitable Foundation &middot; Former Mayor of San Diego</span>
+      <p class="case-desc">Maureen O'Connor, a former two-term Mayor of San Diego, was widely regarded as one of the city's most respected public figures. What unfolded in the decade leading up to 2009 was a story of addiction, financial collapse, and the misuse of charitable funds on a staggering scale. O'Connor reported more than $1 billion in gambling winnings to the IRS—but lost even more. As her gambling intensified, casinos flew her by private jet to continue playing. To sustain her gambling and cover mounting losses, she misappropriated approximately $2.1 million from the charitable foundation established by her late husband, Bob Peterson, founder of Jack in the Box.</p>
+      <p class="case-desc" style="margin-top:10px;">To conceal the embezzlement and avoid taxes on the diverted funds, she characterized the transfers as loans. In one of the rare federal criminal cases involving the abuse of a charitable organization, O'Connor admitted her misconduct, agreed to repay the foundation in full, and resolved all resulting tax liabilities. The case underscored a simple principle: public esteem, however well-earned, offers no exemption from the law.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">08</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Jose Susumo Azano-Matsura, et al.</h3>
+      <span class="case-meta">Foreign Election Interference &middot; Campaign Finance &middot; First of Its Kind</span>
+      <p class="case-desc">Jose Susumo Azano-Matsura, a wealthy Mexican defense contractor, injected nearly $600,000 in illegal foreign money into San Diego’s 2012 mayoral race, funding both Democratic and Republican candidates through straw donors, shell corporations, and a network of intermediaries. His objective was straightforward: gain influence over local officials to advance a proposed waterfront development project known as “Miami West,” worth hundreds of millions of dollars.</p>
+      <p class="case-desc" style="margin-top:10px;">The evidence included undercover recordings, financial records, and communications reflecting efforts to conceal the true source of the funds. Convicted on 36 felony counts, Azano was sentenced to federal prison, fined more than $560,000, and ordered deported upon his release. The case underscored a clear principle: American elections are not for sale—even to those with substantial resources and access.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Supervising prosecutor, assisting AUSAs Andrew Schopler, Mark Pletcher, Helen Hong, and Billy Joe McLean</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">09</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Patrick Frega, et al. (“The Judges Case”)</h3>
+      <span class="case-meta">Judicial Corruption &middot; RICO &middot; California Superior Court Judges</span>
+      <p class="case-desc">The corruption in the “Judges” case unfolded not in a back alley, but inside San Diego’s courthouse. Over more than a decade, attorney Patrick Frega provided three sitting Superior Court judges with more than $100,000 in benefits—including car repairs, cash, ghostwritten novels, vacations, and payments to relatives—in exchange for favorable treatment in high-stakes civil cases worth millions of dollars. The most significant testimony came from Judge Michael Greer, the former presiding judge, who cooperated and admitted accepting substantial bribes.</p>
+      <p class="case-desc" style="margin-top:10px;">Because prosecuting state court judges in federal court presented novel legal challenges, the case was charged under RICO. This innovative approach was controversial at the time, both for its use of state-law bribery as predicate acts and for treating the San Diego Superior Court as the enterprise. All three judges were convicted, exposing a system in which judicial decisions had been quietly influenced by personal favors and financial benefit.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSA Charles LaBella, assisted by AUSAs Steve Clark, Tom McNamara, Kevin Kelly, and John Kirby</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">10</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Hilma Marie Witte, et al.</h3>
+      <span class="case-meta">Murder &middot; Conspiracy &middot; Family as a Criminal Enterprise</span>
+      <p class="case-desc">Most criminal conspiracies are driven by money or greed. The Witte case was driven by something more disturbing: a mother’s authority over her own children. Hilma Marie Witte orchestrated the murders of her husband and mother-in-law by recruiting her children to carry out the killings, turning familial trust into the instrument of the crime. The facts were extraordinary.</p>
+      <p class="case-desc" style="margin-top:10px;">Her husband was killed by her oldest child in a staged hunting accident. The mother-in-law was killed by the younger child with a crossbow; her body dismembered and partially concealed in the family garden. As suspicion grew, the remains were placed in a Coleman cooler, transported across the country in the family RV, and ultimately discarded in the Otay Mesa landfill in San Diego. The case revealed a chilling inversion of a fundamental role: the person expected to protect became the architect of harm, using family trust as both shield and weapon.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">11</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Robert Morales</h3>
+      <span class="case-meta">Bribery &middot; Money Laundering &middot; IRS Agent</span>
+      <p class="case-desc">The largest bribery case ever brought against an IRS agent began with a simple premise: the man responsible for enforcing the nation’s tax laws had instead converted his position into a private toll booth. Over the course of roughly a decade, Morales accepted more than $600,000 in bribes from a wealthy taxpayer in exchange for shielding him from audits and helping conceal millions of dollars in income from the government. The scheme was anything but crude.</p>
+      <p class="case-desc" style="margin-top:10px;">Morales and his son constructed a maze of sham corporations, ghost employees, and phony payroll checks, laundering payments through relatives while living far beyond his reported salary—cars, investments, and Super Bowl tickets. The investigation culminated in an undercover operation in which Morales agreed to launder what he believed to be drug proceeds, sealing his fate. He pleaded guilty to conspiracy, bribery, money laundering, and tax fraud, and was sentenced to 12 years in federal prison—an IRS agent undone by his own accounting.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by DOJ Trial Attorney Steven Ward.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">12</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Mario Saikhon</h3>
+      <span class="case-meta">Tax Evasion &middot; Bribery &middot; Largest Individual IRS Prosecution in History</span>
+      <p class="case-desc">Mario Saikhon, a wealthy Imperial Valley farmer, orchestrated an expansive tax evasion scheme that grew increasingly complex until it collapsed under its own weight. Over a period of years, he concealed millions in income by partnering with a corrupt IRS agent—the same agent at the center of the Morales prosecution—paying hundreds of thousands of dollars in bribes in exchange for audit protection and inside guidance on how to evade detection.</p>
+      <p class="case-desc" style="margin-top:10px;">Rather than relying on a single method, Saikhon constructed a sprawling paper architecture of sham corporations, nominee accounts, and fictitious payroll arrangements designed to siphon off profits while minimizing reported income. The relationship evolved into a decade-long criminal enterprise. When investigators followed the money to Mexico City and back, Saikhon was convicted of conspiracy, tax evasion, and bribery—the largest individual criminal tax prosecution in the history of the Internal Revenue Service.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">13</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Robert Bradley, et al.</h3>
+      <span class="case-meta">Tax Fraud &middot; Charitable Foundation Abuse &middot; First of Its Kind</span>
+      <p class="case-desc">The Bradley case broke new ground in federal tax enforcement: it was the first criminal tax prosecution brought against a charitable foundation in the United States. Bradley and his co-conspirators created what appeared to be a legitimate charitable entity, but in reality used it as a vehicle for financial fraud—exploiting both its tax-exempt status and the public trust afforded to charitable organizations to conceal conduct that was anything but charitable.</p>
+      <p class="case-desc" style="margin-top:10px;">The prosecution required navigating novel legal terrain, as no prior federal criminal tax case had targeted a charitable foundation as the instrument of the offense. The case expanded the government’s ability to address abuse of the charitable form and established that nonprofit status, grounded in public trust, does not extend to conduct designed for private benefit.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">14</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. A&amp;W Sales Corp., et al.</h3>
+      <span class="case-meta">Corporate Accountability &middot; Food Safety &middot; Public Health</span>
+      <p class="case-desc">A Hepatitis A outbreak spread through grade schools across the Midwest, infecting hundreds of students and teachers. Federal investigators traced the source to a food contractor that had cut corners in its production and distribution processes. The prosecution of A&W Sales Corp. held a corporate defendant directly accountable for the human cost of those failures—children sickened, families disrupted, and a community's trust in the school lunch program shaken.</p>
+      <p class="case-desc" style="margin-top:10px;">The case demonstrated that federal criminal enforcement is not confined to financial misconduct but extends to corporate practices that cause direct and measurable harm. Securing a conviction required building a chain of evidence from contaminated strawberries harvested in Mexico, through importation into the United States, and into the company's production process. The prosecution established a clear principle: cutting corners on safety is not merely a regulatory failure, but a federal crime.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Melanie Pierson.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">15</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Javid Naghdi</h3>
+      <span class="case-meta">Counterfeit Prescription Drugs &middot; Largest FDA Case in History</span>
+      <p class="case-desc">Javid Naghdi, a pharmacist, operated an international counterfeit prescription drug ring of extraordinary scale—the largest such case ever prosecuted by the Food and Drug Administration. He assembled the equipment, raw materials, and packaging necessary to manufacture counterfeit pharmaceuticals and marketed them to distributors at below-market prices, falsely claiming access to bulk inventory through a high-volume pharmaceutical operation. After being indicted and posting bail, he fled to London, where he continued running the scheme from abroad, apparently calculating that distance from the United States would place him beyond reach. He was wrong.</p>
+      <p class="case-desc" style="margin-top:10px;">Working with British authorities, Halpern launched a complex undercover operation in which a federal agent posed as a pharmaceutical wholesaler negotiating a multi-million-dollar purchase. The operation led to Naghdi’s arrest in London and his return to the United States, where he was sentenced to 14 years in federal prison. The case stands as a landmark in FDA criminal enforcement. It demonstrates that large-scale pharmaceutical counterfeiting—whether domestic or international—will be pursued relentlessly, and that those who attempt to evade justice by operating from abroad will ultimately be brought back to face it.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">16</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Metabolife International, et al.</h3>
+      <span class="case-meta">Corporate Fraud &middot; Consumer Safety &middot; Dietary Supplements</span>
+      <p class="case-desc">At its peak, Metabolife International was the nation’s largest company in the dietary supplement industry, generating hundreds of millions of dollars in annual revenue from ephedra-based weight-loss products. The federal case exposed a systematic pattern of concealment: the company had received reports of serious adverse health events—heart attacks, strokes, and seizures—linked to its products and failed to disclose them to the FDA as required by federal law, choosing revenue over the health and safety of its customers.</p>
+      <p class="case-desc" style="margin-top:10px;">The prosecution contributed to the eventual ban on ephedra-containing supplements and established an important precedent for corporate accountability in an industry that had long operated in a regulatory gray area. The case demonstrated that the supplement market is not beyond the reach of federal criminal enforcement—and that concealing known safety risks from the regulators is a crime, not merely a business decision.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Kyle Hoffman.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">17</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Richard Anthony Fitton</h3>
+      <span class="case-meta">Drug Smuggling &middot; First Federal Steroid Prosecution</span>
+      <p class="case-desc">Richard Anthony Fitton, a strength coach at the University of Miami, operated an international steroid trafficking network, concealing product in tire wells, false compartments, and modified fuel tanks to move inventory across the U.S.–Mexico border. At the time, steroids had not yet been classified as controlled substances under federal law, and Fitton believed his activities carried little legal risk. Prosecuting the case therefore required creative use of existing statutes and a detailed understanding of smuggling techniques. Fitton’s operation began to unravel after he was stopped at the San Ysidro Port of Entry with internationally recognized powerlifter Victoria Steenrod.</p>
+      <p class="case-desc" style="margin-top:10px;">Halpern directed that both be arrested. After his release on bond, Fitton fled. Halpern pursued the case over several years, ultimately assembling multiple federal charges and uncovering a broader distribution network. The charges—smuggling under 18 U.S.C. § 545, unlawful introduction of a prescription drug into interstate commerce, and failure to report illegal income—were drawn from existing statutes in the absence of steroid-specific criminal law. The case became the first federal prosecution of steroid distribution in the United States, establishing a framework that would guide subsequent enforcement and earning Halpern a reputation in the industry press as “the steroid smuggler’s worst nightmare.”</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">18</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. David Jenkins, et al.</h3>
+      <span class="case-meta">Counterfeit Steroids &middot; Largest Ring in U.S. History</span>
+      <p class="case-desc">The Jenkins investigation dismantled the largest counterfeit steroid ring ever uncovered in the United States—a sophisticated operation producing and distributing fake anabolic steroids on a mass scale, exposing thousands of users to unknown and potentially dangerous substances. The organization operated through an elaborate distribution network that spanned virtually every state, moving product through channels designed to mimic legitimate pharmaceutical supply chains.</p>
+      <p class="case-desc" style="margin-top:10px;">The case, built on years of accumulated expertise in steroid enforcement, represented the culmination of Halpern’s work in this area. It brought to a close a series of investigations that began with a single phone call from a border inspector in 1984 and ended with the dismantling of the most extensive counterfeit steroid operation the government had encountered. Jenkins and his co-conspirators were convicted on multiple felony counts and brought national attention to the dangers posed by anabolic steroids.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">19</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. William Cambra</h3>
+      <span class="case-meta">Controlled Substances &middot; First Federal HGH Prosecution</span>
+      <p class="case-desc">Human Growth Hormone had circulated for years in athletic and anti-aging circles—marketed as a performance enhancer, a recovery accelerant, and a so-called “fountain of youth”—before federal enforcement addressed its illegal distribution outside legitimate medical channels. The Cambra prosecution was the first federal case brought against the unlawful distribution of HGH, establishing the framework that would guide enforcement in this area for years to come.</p>
+      <p class="case-desc" style="margin-top:10px;">The case signaled that federal criminal enforcement extended beyond traditional controlled substances to the broader market for performance-enhancing compounds sold without prescription or medical supervision. Cambra’s prosecution drew a clear line: HGH distributed outside legitimate medical channels is not a regulatory matter—it is a federal crime. The precedent proved consequential as HGH enforcement expanded in subsequent years across professional sports and the anti-aging industry.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">20</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Francis George Christie, et al.</h3>
+      <span class="case-meta">Arms Smuggling &middot; Presidential Embargo &middot; First Federal Case</span>
+      <p class="case-desc">In the mid-1980s, President Reagan's executive order imposing a comprehensive trade embargo on Libya was a central tool of U.S. foreign policy against the government of Muammar Gaddafi. Christie and his co-conspirators set out to evade it—arranging for the export of restricted oil industry equipment, including Solar gas turbine systems essential to pumping crude from deep desert oil fields. Working through Oil Patch Productions in Louisiana and Christie Noble Services, a Scottish turbine company, the defendants used intermediaries, falsified invoices, and altered equipment markings to conceal Libya as the ultimate destination of the shipments.</p>
+      <p class="case-desc" style="margin-top:10px;">Prosecuting an embargo violation required connecting complex international transactions to the specific prohibitions of a Presidential executive order—largely untested legal ground at the time. The conviction demonstrated that embargoes carried real criminal consequences and that the government would pursue those who attempted to circumvent them through layered international schemes. The case established a framework that subsequent embargo enforcement actions would follow.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">21</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Richard P. Sullivan</h3>
+      <span class="case-meta">Drug Trafficking &middot; Public Corruption</span>
+      <p class="case-desc">When Vice President George Bush launched the South Florida Task Force it was the most ambitious and expensive drug enforcement operation in the nation's history. In response, traffickers began rerouting their operations westward. Customs Special Agent Richard P. Sullivan, assigned to guard that border, saw this as an opportunity and took it. Rather than intercepting drugs, he facilitated their distribution — supplying the organization with aeronautical charts designating radar-free zones, border patrol schedules, and safe landing areas — effectively handing them a map through the government's own defenses. Sullivan also worked with other corrupt Customs officers to ensure the flights crossed the Mexican border without scrutiny. For his role, Sullivan received hundreds of thousands of dollars delivered in cash-filled manila envelopes.</p>
+      <p class="case-desc" style="margin-top:10px;">To handle distribution on the ground, Sullivan recruited his brother — a member of the Outlaw Motorcycle Gang — to use gang members to offload and move the product. The case was extraordinarily complex to investigate and try, a corruption case layered inside a narcotics conspiracy layered inside an institutional betrayal. Sullivan's conviction in 1986 stood for a principle that goes beyond the underlying offenses: when the gatekeeper becomes the conduit, the system's defenses aren't merely tested — they are bypassed from within. Accountability, the case made clear, must run inward as well as outward.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">22</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Dan Duchaine ("The Steroid Guru")</h3>
+      <span class="case-meta">Controlled Substances &middot; Underground Distribution</span>
+      <p class="case-desc">Dan Duchaine was the defining figure in the underground anabolic steroid market—the Guru whose writings, consulting network, and direct participation in acquisition and distribution made him the architect of a black-market economy designed to operate entirely outside federal oversight. As government control of anabolic steroids tightened in the 1980s, Duchaine had become the movement's ideological and operational center, normalizing the diversion of controlled substances from legitimate medical channels into an unregulated shadow market that served thousands of users.</p>
+      <p class="case-desc" style="margin-top:10px;">His downfall came through an undercover operation using a cooperating associate who recorded Duchaine openly discussing the scope of his operation—the scale of his shipments, the number of clients, the profits. The recordings provided the foundation for federal charges, but Duchaine led the investigation on a chase before ultimately being brought to account. He pleaded guilty and was convicted. In his Underground Steroid Handbook, he had advised readers to avoid the Southern District of California—an acknowledgment, however grudging, that he understood the risks. The prosecution underscored a simple rule: when demand drives markets in controlled substances, those markets do not escape federal law by operating in shadow channels. The answer is not tolerance—it is prosecution.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">23</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Harold J. Sherbondy</h3>
+      <span class="case-meta">Securities Fraud &middot; Ponzi Scheme &middot; Money Laundering</span>
+      <p class="case-desc">Harold J. Sherbondy operated a multi-million dollar Ponzi scheme that lured investors with promises of extraordinary returns from trading Eurobonds and commodities on the Chicago Mercantile Exchange. Rather than generating legitimate profits, he used new investor money to pay returns to earlier participants, while issuing fraudulent account statements showing consistent gains. To maintain this classic Ponzi scheme, Sherbondy discouraged withdrawals and required investors to lock up their funds, all while portraying himself as a wealthy international financier with ties to major institutions and corporate boards.</p>
+      <p class="case-desc" style="margin-top:10px;">Sherbondy was particularly effective at targeting former PSA employees, convincing them to invest their entire individual retirement accounts (IRA funds) generated from the PSA buyout. He financed an extravagant lifestyle with stolen investor money—corporate jets, luxury vehicles, Mexican groves, international travel—while bragging about having made billions through his investments. As with all Ponzi schemes, the operation depended on a continuous flow of new money and ultimately collapsed under its own weight. The prosecution underscored a simple rule: investment returns must be earned, not fabricated. When profits are paid from investor funds rather than real activity, the enterprise is not investment—it is fraud.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+    <div class="case-card">
+      <span class="case-number">24</span>
+      <div class="case-rule"></div>
+      <h3 class="case-name">United States v. Parthasarathi "Bob" Majumder</h3>
+      <span class="case-meta">Campaign Finance &middot; Straw Donors &middot; Defense Contracting</span>
+      <p class="case-desc">Parthasarathi "Bob" Majumder, the owner of a San Diego-area defense contracting company, orchestrated a scheme to funnel illegal campaign contributions to members of Congress, including Representatives Duncan Hunter and Randy Cunningham, and Senator John Kerry. Over several years, Majumder recruited "straw donors" from his employees, subcontractors, and associates and convinced them to make political contributions in their own names. He would then reimburse them and, in this manner, conceal himself as the true source of the funds. Majumder's contributions were aimed at these three lawmakers as they all had influence over defense appropriations—which he was illegally seeking for his company while evading federal limits and disclosure requirements.</p>
+      <p class="case-desc" style="margin-top:10px;">The case was built through financial records and witness testimony establishing the coordinated reimbursement scheme. Majumder pleaded guilty to felony campaign finance violations. The prosecution underscored a fundamental rule of federal election law: contributions must be made in the name of the true donor. When that rule is deliberately evaded through straw donors, the system designed to ensure transparency—disclosure requirements, contribution limits—becomes a fiction. Money flows to influence, and the public has no way to know whose interests are actually being served.</p>
+      <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- INTERNATIONAL -->
+<section id="international">
+  <p class="section-label">Beyond the Courtroom</p>
+  <h2 class="section-title">Rule of Law Beyond Borders</h2>
+  <div style="width:60px;height:2px;background:var(--gold);margin-bottom:40px;"></div>
+  <p class="prose">Throughout his federal career, Halpern was called upon to carry American prosecutorial expertise to countries working to build or strengthen their own anti-corruption frameworks &mdash; work that took him across four continents and produced lasting institutional contributions.</p>
+  <div class="intl-grid">
+    <div class="intl-item">
+      <h3 class="intl-location">Tanzania, Zanzibar &amp; Ghana</h3>
+      <span class="intl-year">1993 &middot; U.S. State Department / USIA</span>
+      <p class="intl-desc">Selected as the United States' first Professional-in-Residence posted to Africa under the USIA program. Worked with the Government of Tanzania on anti-corruption initiatives; drafted money laundering legislation for the Attorney General of Zanzibar; proposed structural reforms for the Tanzanian Supreme Court; and consulted with the Government of Ghana on the creation of a serious fraud office. Also authored a law review article for the University of Tanzania Law School on plea bargaining in the American criminal justice system.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Cyprus / Lebanon</h3>
+      <span class="intl-year">1998</span>
+      <p class="intl-desc">Negotiated the first bilateral working agreement on money laundering between the United States and Lebanon &mdash; a milestone in international financial enforcement cooperation that created a formal framework where none had previously existed.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Nepal</h3>
+      <span class="intl-year">2002</span>
+      <p class="intl-desc">Provided training to public prosecutors and law enforcement officials on corruption investigations and prosecutorial practices, contributing to institutional capacity-building efforts during a period of significant political challenge.</p>
+    </div>
+    <div class="intl-item">
+      <h3 class="intl-location">Philippines</h3>
+      <span class="intl-year">2017</span>
+      <p class="intl-desc">Advised Philippine law enforcement personnel on corruption investigations and anti-corruption enforcement practices &mdash; bringing four decades of American prosecutorial experience to bear on the institutional challenges facing law enforcement in the Philippines.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE & LEADERSHIP -->
+<section id="service">
+  <p class="section-label">Institution Building</p>
+  <h2 class="section-title">Service &amp; Leadership</h2>
+  <div style="width:60px;height:2px;background:var(--gold);margin-bottom:40px;"></div>
+  <div class="service-block">
+    <h3 class="service-title">Founder &mdash; Border Research &amp; Technology Center</h3>
+    <span class="service-meta">U.S. Department of Justice, Treasury &amp; ONDCP &middot; 1996</span>
+    <p class="service-desc">Halpern drafted the founding Memorandum of Understanding between the Department of Justice, the Department of the Treasury, and the Office of National Drug Control Policy that established the Border Research &amp; Technology Center &mdash; a federal initiative designed to apply technology and interagency coordination to the challenges of border security enforcement. He subsequently played an active role in the creation of the Designated Commuter Lane at the San Ysidro Port of Entry and the development of the San Diego Border Tactical Wireless Interoperability Testbed, and was an early proponent of the NIJ Rapid Pursuit Task Force. The Center became a model for evidence-based, technology-driven border enforcement infrastructure.</p>
+  </div>
+  <div class="service-block">
+    <h3 class="service-title">Adjunct Professor of Law</h3>
+    <span class="service-meta">University of San Diego School of Law &middot; 1988&ndash;1995</span>
+    <p class="service-desc">For seven years while carrying a full federal caseload, Halpern taught upper-class and graduate law students on white-collar crime and corporate criminal responsibility &mdash; including theories of corporate liability, conflicts in multiple representation, and the outer limits of the attorney-client privilege in criminal investigations. He drew directly on active federal cases to teach what the law looks like when it meets the real world, and supervised law review articles on occasion.</p>
+  </div>
+</section>
+
+<!-- ACKNOWLEDGMENTS -->
+<section id="acknowledgments">
+  <p class="section-label">It Takes a Team</p>
+  <h2 class="section-title">A Note on the Team</h2>
+  <div style="width:60px;height:2px;background:var(--gold);margin-bottom:40px;"></div>
+  <p class="ack-intro">Federal prosecutions of this scope and complexity are never the product of a single person. The cases documented on this site were built by teams of exceptional professionals &mdash; agents who spent years developing investigations, colleagues who tried cases alongside me, and the dedicated office staff without whom nothing reaches trial. It is an honor to acknowledge them here.</p>
+
+  <!-- AGENCIES: two columns -->
+  <div class="ack-group-label">Investigating Agents &amp; Officers</div>
+  <div class="ack-columns" style="margin-bottom:52px;">
+
+    <div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">Internal Revenue Service</div>
+        <div class="ack-names">Maria Alvarez, Bob Brana, Dave Chell, Maura Fahy, Steve Gelman, Jamie Harrison, Eric Helfand, Roger Lange, Sara Larson, Tom Martinez, Dennis McCarthy, Dan McGuire, Sue McGuire, Jim Nielson, Van Nguyen, Carl Oroz, Richard Pietrofeso, Randy Pissot, Norm Rains, Alan Schick, Jeff Sheldon, Dave White, Liz Winn, Lee Wright</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">Federal Bureau of Investigation</div>
+        <div class="ack-names">Bridget Cook, Tim FitzSimmons, John Gillis, Moe Hattier, Lamont Siller, Les Masterson, Nicole McAfee, Jeff McKinney, Erin Phan, John Roberts, Stephanie Schuld, Charlie Walker</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">U.S. Customs Service</div>
+        <div class="ack-names">Pete Darvis, Ken Kilroy, Norm Rains, Brian Simons, Dan Supnick, Terri Tolifson</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">Central Intelligence Agency</div>
+        <div class="ack-names">Seth Hagerman, Jonathan Kaplan, Kim McManus, Bill Mitchell</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">Defense Criminal Investigative Service</div>
+        <div class="ack-names">Jerry Crosby, Sam Medigovich</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">State &amp; Local Law Enforcement</div>
+        <div class="ack-names">Arlie Boyd (Indiana State Police) &middot; Jim Clem (San Diego PD) &middot; Eugene Pierce (Trail Creek PD) &middot; John Schaefer (Hudson County Sheriff, N.J.)</div>
+      </div>
+    </div>
+
+    <div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">Food &amp; Drug Administration</div>
+        <div class="ack-names">Dennis Degan, John Hunt</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">USDA Office of Inspector General</div>
+        <div class="ack-names">Dave Dickson</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">U.S. Secret Service</div>
+        <div class="ack-names">Steven Davis</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">U.S. Postal Inspection Service</div>
+        <div class="ack-names">Tim Franz</div>
+      </div>
+      <div class="ack-agency">
+        <div class="ack-agency-name">U.S. Border Patrol</div>
+        <div class="ack-names">Jim Wagner</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- USAO / STAFF / DOJ: three sub-groups -->
+  <div class="ack-group-label">Office Colleagues &mdash; U.S. Attorney&#x2019;s Office &amp; DOJ</div>
+  <div class="ack-columns" style="grid-template-columns:1fr 1fr 1fr;gap:40px;">
+
+    <div>
+      <div class="ack-agency-name" style="margin-bottom:10px;">Assistant U.S. Attorneys</div>
+      <div class="ack-names">
+        Ed Allard &middot; Emily Allen &middot; Aaron Arnzen &middot;
+        Shireen Becker &middot; Sanjay Bhandari &middot;
+        Bruce Castetter &middot; Valerie Chu &middot; Steve Clark &middot;
+        Mark Conover &middot; Sean Coyle &middot; Steve Crandall &middot;
+        Mike Dowd &middot; Judy Feigin &middot; Jason Forge &middot;
+        Andrew Galvin &middot; Charles Gorder &middot; Jeff Hill &middot;
+        Kyle Hoffman &middot; Helen Hong &middot; Pat Hovakimian &middot;
+        Rob Huie &middot; Rebecca Kanter &middot; Ben Katz &middot;
+        Kevin Kelly &middot; John Kirby &middot; Charles LaBella &middot;
+        Pete Mazza &middot; Billy Joe McLean &middot; Tom McNamara &middot;
+        James Melendres &middot; Pat O&#x2019;Toole &middot; Tim Perry &middot;
+        Melanie Pierson &middot; Nick Pilchak &middot; Mark Pletcher &middot;
+        Lisa Sanniti &middot; Andrew Schopler &middot; Danny Silva &middot;
+        Michelle Wasserman &middot; Andrew Young
+      </div>
+    </div>
+
+    <div>
+      <div class="ack-agency-name" style="margin-bottom:10px;">Support Staff</div>
+      <div class="ack-names">
+        Dina Alejandre &middot; Mike Attanasio &middot; Ralph Burger &middot;
+        Nikki Campana &middot; Ray Christiansen &middot; Tuan Dinh &middot;
+        Ken Dortzbach &middot; Shakenya Edison &middot; John Gomez &middot;
+        Deb Hartman &middot; Jim Heckman &middot; Martha Hernandez &middot;
+        Diana Houska &middot; Adam Johnson &middot; Kathleen Jordano &middot;
+        Cindy Millsaps &middot; Rene Miranda &middot; Polly Montano &middot;
+        Gail Mosse &middot; Ron Oliver &middot; Marian Reece &middot;
+        Jim Rochford &middot; Barbara Scoville &middot; Kelly Thornton &middot; Tracy Smith &middot;
+        Eugene Stillman &middot; Barbara Townsend &middot; Norma Vaughn
+      </div>
+    </div>
+
+    <div>
+      <div class="ack-agency-name" style="margin-bottom:10px;">Department of Justice</div>
+      <div class="ack-names">
+        Brenda Morris &middot; Mandy Riedel &middot; Steve Ward
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- WRITING -->
+<section id="writing">
+  <p class="section-label" style="color:var(--gold);">Writing &amp; Commentary</p>
+  <h2 class="section-title">Reflections on Law,<br>Justice &amp; Power</h2>
+  <p class="prose" style="color:rgba(255,255,255,0.62);">
+    Since leaving federal service, Halpern has written and spoken widely on the independence of the Department of Justice, the dangers of politicized prosecution, campaign finance enforcement, and the long arc of federal corruption in American public life. His commentary draws on lived experience — not theory.
+  </p>
+
+  <div class="writing-columns">
+    <div>
+      <p class="writing-category-label">Op-Eds &amp; Commentary</p>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2020/10/14/i-wont-work-in-attorney-general-william-barrs-justice-department-any-longer/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">I Won't Work in Attorney General William Barr's Justice Department Any Longer ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">On the structural independence of federal prosecutors and why it must be defended — especially from pressure within the executive branch itself.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2021/02/02/i-prosecuted-duke-cunningham-and-duncan-hunter-trumps-pardons-of-them-are-shameful/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">I Prosecuted Duke Cunningham and Duncan Hunter. Trump's Pardons of Them Are Shameful. ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">A practitioner's reflection on the Cunningham and Hunter cases, and what they reveal about the culture of impunity among the elected.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2020/12/02/as-a-career-federal-prosecutor-i-can-tell-you-the-allegations-of-widespread-voter-fraud-are-false/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">As a Career Federal Prosecutor, I Can Tell You the Allegations of Widespread Voter Fraud Are False ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">A career federal prosecutor's assessment: the claims of a stolen election don't survive contact with the evidentiary standards that govern federal court.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2020/12/30/2020-is-the-year-our-democracy-died/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">2020 Is the Year Our Democracy Died ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">A prosecutor's reckoning with what was lost — and what it will take to recover it.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2021/12/16/the-fleeting-unity-following-911-is-impossible-in-todays-political-climate-heres-why/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">The Fleeting Unity Following 9/11 Is Impossible in Today's Political Climate. Here's Why ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">On the erosion of shared purpose and the political fragmentation that prevents collective response to national challenge.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://www.sandiegouniontribune.com/2021/07/02/the-american-flag-should-be-a-unifying-symbol-that-transcends-politics/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">The American Flag Should Be a Unifying Symbol That Transcends Politics ↗</a></p>
+        <p class="writing-publication">San Diego Union-Tribune</p>
+        <p class="writing-teaser">Why national symbols must remain above partisan divide, and what we lose when we treat them as weapons in political warfare.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title"><a href="https://timesofsandiego.com/opinion/2026/05/02/ice-deportations-kicking-out-some-of-the-best-and-brightest/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.25);padding-bottom:1px;">ICE Deportations Are Kicking Out Some of the Best and Brightest ↗</a></p>
+        <p class="writing-publication">Times of San Diego</p>
+        <p class="writing-teaser">Three physicians who saved my life were born abroad. A meditation on talent, merit, and what immigration policy reveals about who we value as Americans.</p>
+      </div>
+    </div>
+
+    <div>
+      <p class="writing-category-label">Themes &amp; Areas of Expertise</p>
+      <div class="writing-item">
+        <p class="writing-title">Independence of the Department of Justice</p>
+        <p class="writing-teaser" style="color:rgba(255,255,255,0.48);">The institutional safeguards that prevent the DOJ from becoming a political instrument — and what their erosion looks like from the inside.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title">Congressional Corruption &amp; Accountability</p>
+        <p class="writing-teaser" style="color:rgba(255,255,255,0.48);">Three decades of front-line experience prosecuting elected officials, their co-conspirators, and the systems that protected them.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title">Campaign Finance Enforcement</p>
+        <p class="writing-teaser" style="color:rgba(255,255,255,0.48);">The gap between the law on the books and the law in practice — and why that gap is growing wider.</p>
+      </div>
+      <div class="writing-item">
+        <p class="writing-title">Prosecutorial Ethics &amp; the Rule of Law</p>
+        <p class="writing-teaser" style="color:rgba(255,255,255,0.48);">What it means to exercise federal power with restraint, integrity, and independence from political calculation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS & MEDIA -->
+<section id="press-media">
+  <p class="section-label">Magazines & News</p>
+  <h2 class="section-title">Press and Media</h2>
+  
+  <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;color:var(--ink);line-height:1.6;margin:24px 0 48px 0;max-width:720px;">
+    Media coverage of landmark prosecutions, operations, and legal work.
+  </p>
+
+  <!-- PHILLIP HALPERN PROFILE: TIMES OF SAN DIEGO -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Phillip Halpern Profile: Career, Ethics, and Public Voice</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Retired Assistant U.S. Attorney reflects on 36-year prosecutorial career, DOJ independence under pressure, and decision to speak publicly on institutional integrity. Media coverage of career retrospective and professional legacy.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Third-party profile:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Times of San Diego</span><span style="font-size:14px;color:#888;">October 16, 2020</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/profile/The_Story_Behind_Phillip_Halpern_s_Viral_U-T_Piece_Bashing_AG_William_Barr.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">\"The Story Behind Phillip Halpern's Viral U-T Piece Bashing AG William Barr\"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Profile by Ken Stone examining the personal and institutional context behind Halpern's viral op-ed critique of Attorney General William Barr. Covers his late-career decision to stay on through the Duncan Hunter prosecution despite fears of DOJ political interference; his wife Marcia's influence on his decision to write publicly; national media appearances on MSNBC and CNN; and his reflections on prosecutorial ethics, career integrity, and warnings about threats to American democracy.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Times of San Diego, October 16, 2020</p></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:22px;font-weight:700;color:var(--navy);margin:48px 0 32px 0;letter-spacing:0.5px;">Case Coverage</h3>
+
+  <!-- SAIED ASEFI INANOU / F-14 CASE -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Saied Asefi Inanou / F-14 Smuggling Network</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Iranian military sought U.S. fighter jet parts through American businessmen and military contractors. Prosecution of international arms smuggling ring involving Navy supply system infiltration.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press verification below:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">M Magazine</span><span style="font-size:14px;color:#888;">December 1985</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Diabolical_Dealing.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Diabolical Dealing: Selling 'Great Satan's' Guns to the Ayatollah"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Investigative report examining Iranian procurement of U.S. military equipment through civilian intermediaries and military contractors, detailing the network's sophistication and federal enforcement response.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">M Magazine (The Civilized Man), December 1985</p></div>
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Military Logistics Forum</span><span style="font-size:14px;color:#888;">November/December 1985</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/The_Iranian_Connection.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"The Iranian Connection"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Special report on Iranian infiltration of U.S. military supply system, documenting how foreign intelligence exploited security vulnerabilities in Navy logistics and procurement operations.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Military Logistics Forum, November/December 1985</p></div>
+    </div>
+  </div>
+
+  <!-- FRANCIS GEORGE CHRISTIE / LIBYA CASE -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Francis George Christie / Libya Equipment Smuggling</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Oil drilling equipment diverted to Libya in violation of U.S. embargo. Undercover investigation targeting international smuggling operation.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press verification below:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">San Diego Magazine</span><span style="font-size:14px;color:#888;">March 1987</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/The_Invisible_Man.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"The Invisible Man: Undercover in San Diego, He Breaks a Smuggling Link to Libya"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Profile of undercover operation infiltrating suspected smuggling network diverting U.S. equipment to embargoed nation. Investigation uncovering covert arms trafficking and sanctions violations.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">San Diego Magazine, March 1987</p></div>
+    </div>
+  </div>
+
+  <!-- JAVID NAGHDI / PILLS CASE -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Javid Naghdi / Pharmaceutical & Arms Trafficking</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Iranian national involved in trafficking pharmaceuticals and military equipment. Federal prosecution targeting transnational smuggling network.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press verification below:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Newsweek</span><span style="font-size:14px;color:#888;">November 4, 1990</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Pill_Pirates.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Pill Pirates"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">National coverage of criminal network trafficking prescription pharmaceuticals and military equipment to foreign intelligence services. Case establishing federal enforcement precedent.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Newsweek, November 4, 1990</p></div>
+    </div>
+  </div>
+
+  <!-- JUDGE PATRICK FREGA / JUDICIAL CORRUPTION -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Judge Patrick Frega / Judicial Corruption</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Federal prosecution of sitting superior court judge on bribery and racketeering charges. Case exposing corruption within San Diego judicial system.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press verification below:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">California Lawyer</span><span style="font-size:14px;color:#888;">December 1996</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Tempting_Justice.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Tempting Justice"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Profile of aggressive prosecution bringing down corrupt judge; examines judicial integrity crisis and implications for San Diego legal community. By Brae Carlen.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">California Lawyer, December 1996</p></div>
+    </div>
+  </div>
+
+  <!-- STEROID PROSECUTIONS / DAVID JENKINS -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Steroid Smuggling Prosecutions (David Jenkins & Related Cases)</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Multi-defendant prosecutions targeting large-scale anabolic steroid trafficking networks. Series of cases establishing federal authority over illegal steroid distribution.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press coverage and professional profiles below:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Los Angeles Times Magazine</span><span style="font-size:14px;color:#888;">April 24, 1988</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Confessions_of_a_Steroid_Smuggler.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Confessions of a Steroid Smuggler: When the Quest for Big Muscles Turns Into a Passion for Big Money"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">In-depth investigative profile by John Eisendrath of major steroid trafficking networks in Southern California. Federal enforcement against black-market distribution and professional athletes.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Los Angeles Times Magazine, April 24, 1988</p></div>
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Sports Illustrated</span><span style="font-size:14px;color:#888;">May 13, 1985</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Steroid_Explosion.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Steroid Explosion"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">National magazine coverage of steroid epidemic in professional athletics and body-building. Federal law enforcement response and prosecution strategy.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Sports Illustrated, May 13, 1985</p></div>
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Newsweek</span><span style="font-size:14px;color:#888;">November 5, 1990</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Confessions_of_a_Counterfeiter.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Confessions of a Counterfeiter"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Profile of sophisticated counterfeit pharmaceutical manufacturing and distribution scheme. Federal investigation and prosecution of major trafficking ring.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Newsweek, November 5, 1990</p></div>
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Muscle Media 2000</span><span style="font-size:14px;color:#888;">August–September 1993</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Steroids_and_the_Law.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Steroids and the Law"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Comprehensive overview of federal steroid prosecution landscape, prosecutorial strategy, and role in establishing enforcement framework for anabolic steroid trafficking.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Muscle Media 2000, August–September 1993</p></div>
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">California Lawyer</span><span style="font-size:14px;color:#888;">December 1996</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Most_Respected_Lawyers.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Most Respected Lawyers"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Professional profile examining prosecutorial career in steroid cases and role in establishing federal enforcement precedent in drug trafficking prosecution.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">California Lawyer, December 1996</p></div>
+    </div>
+  </div>
+
+  <!-- DAN DUCHAINE / UNDERGROUND HANDBOOK -->
+  <div style="margin-bottom:56px;padding-bottom:40px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Dan Duchaine / Underground Steroid Handbook</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Federal prosecution of author and distributor of clandestine steroid manufacturing and use manual. Case involving underground publication targeting body-building and athletic communities.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Subject publication:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">Underground Steroid Handbook II</span><span style="font-size:14px;color:#888;">By Dan Duchaine</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Underground_Steroid_Handbook_II.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">Underground Steroid Handbook II</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Clandestine publication by Dan Duchaine detailing steroid chemistry, synthesis, and underground production methods. Subject of federal prosecution for distribution.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">Underground Steroid Handbook II, by Dan Duchaine</p></div>
+    </div>
+  </div>
+
+  <!-- SCHOLARLY ANALYSIS: JENKINS-DUCHAINE-DILLON RING -->
+  <div style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Scholarly Analysis: The Jenkins-Duchaine-Dillon Steroid Ring</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Academic examination of the landmark federal investigation and prosecution that shaped federal steroid enforcement policy and led to the Anabolic Steroids Control Act.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Peer-reviewed scholarship:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">The International Journal of the History of Sport</span><span style="font-size:14px;color:#888;">Published online September 25, 2023</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Dawn_of_the_war_on_steroids.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Dawn of the War on Steroids: A History of Federal Steroid Prosecution (1984–1990)"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Comprehensive scholarly analysis by sport historian Daniel L. Rosenke documenting the origins of federal steroid enforcement, the largest anabolic steroid trafficking ring in U.S. history, and the prosecutorial strategy that established the framework for modern drug policy. Based on archival research, FBI case files, court documents, and extensive interviews with Assistant U.S. Attorney Phillip Halpern and FDA Compliance Officer Dennis Degan.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">The International Journal of the History of Sport, published online September 25, 2023</p></div>
+    </div>
+  </div>
+
+  <!-- HILMA MARIE WITTE / HOMICIDE -->
+  <div style="margin-bottom:56px;padding-bottom:56px;border-bottom:1px solid var(--gold);">
+    <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:0 0 12px 0;letter-spacing:0.5px;">Hilma Marie Witte / Homicide</h3>
+    <p style="font-size:15px;color:#555;line-height:1.5;margin:0 0 24px 0;font-style:italic;">Murder of elderly woman by family members; prosecution of mother and son.</p>
+    <p style="font-size:13px;color:var(--gold);font-style:italic;margin:0 0 20px 0;"><strong>Contemporary press coverage:</strong></p>
+    <div style="display:flex;flex-direction:column;gap:28px;">
+      <div><div style="display:flex;gap:16px;align-items:baseline;margin-bottom:8px;flex-wrap:wrap;"><span style="font-weight:700;font-size:15px;color:var(--navy);">The San Diego Union</span><span style="font-size:14px;color:#888;">November 9, 1964</span></div><div style="margin:8px 0 12px 0;display:flex;align-items:flex-start;gap:6px;"><a href="press_pdfs/Witte_article.pdf" target="_blank" style="font-size:16px;font-weight:600;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);">"Mother, son arrested in elderly woman's death"</a><span style="color:var(--gold);font-weight:600;font-size:14px;">↗</span></div><p style="font-size:14px;line-height:1.6;color:#555;margin:0;">Newspaper report on arrest of Helma Marie Witte, 36, and son John David Witte, 15, in connection with death of 74-year-old Elaine Witte in Trail Creek, Indiana.</p><p style="font-size:12px;color:#999;margin:8px 0 0 0;font-style:italic;">The San Diego Union, November 9, 1964</p></div>
+    </div>
+  </div>
+
+  <!-- SPEAKING TOPICS -->
+  <h3 style="font-size:20px;font-weight:700;color:var(--navy);margin:56px 0 24px 0;letter-spacing:0.5px;">Speaking</h3>
+  <p class="prose speaking-intro">
+    With 40 years of prosecutorial experience — including 36 years as a federal prosecutor in the Southern District of California — Phillip Halpern brings a rare practitioner's voice to questions at the center of American public life. Available for lectures, panels, and media appearances on the following topics:
+  </p>
+
+  <div class="speaking-grid">
+    <div class="topic-card">
+      <span class="topic-icon">🏛</span>
+      <h3 class="topic-title">DOJ Independence &amp; Prosecutorial Ethics</h3>
+      <p class="topic-desc">The safeguards protecting federal prosecutors from political pressure — and what their erosion looks like in practice, from inside the building.</p>
+    </div>
+    <div class="topic-card">
+      <span class="topic-icon">⚖️</span>
+      <h3 class="topic-title">Congressional Corruption</h3>
+      <p class="topic-desc">Inside the Cunningham, Hunter, and Foggo prosecutions: what motivated them, what they required, and what they revealed about power in America.</p>
+    </div>
+    <div class="topic-card">
+      <span class="topic-icon">🗳</span>
+      <h3 class="topic-title">Campaign Finance Law &amp; Enforcement</h3>
+      <p class="topic-desc">The tools available to federal prosecutors — and the political obstacles that too often prevent their use.</p>
+    </div>
+    <div class="topic-card">
+      <span class="topic-icon">🔎</span>
+      <h3 class="topic-title">Federal Investigations &amp; the Media</h3>
+      <p class="topic-desc">How high-profile federal cases interact with public opinion, political narratives, and the press — for better and worse.</p>
+    </div>
+    <div class="topic-card">
+      <span class="topic-icon">📖</span>
+      <h3 class="topic-title">36 Years on the Front Lines</h3>
+      <p class="topic-desc">A career retrospective: what changed, what endured, and what the American justice system still gets right — and dangerously wrong.</p>
+    </div>
+    <div class="topic-card">
+      <span class="topic-icon">🌐</span>
+      <h3 class="topic-title">National Security &amp; Intelligence Oversight</h3>
+      <p class="topic-desc">Lessons from the Foggo prosecution on applying civilian law accountability to the highest levels of the intelligence community.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PERSONAL -->
+<section id="personal" style="background:var(--warm-white);border-top:1px solid var(--rule);">
+  <div style="max-width:820px;">
+
+    <p class="section-label">Personal</p>
+    
+    <!-- BACKGROUND -->
+    <h2 class="section-title">Background</h2>
+    <div class="prose" style="margin-bottom:56px;">
+      <p>Born in Rockville Centre, New York. Competitive cyclist and former distance runner (sub-2:40 marathon). Interests include single malt Scotch whisky, wine, woodworking, koi keeping, football (soccer), and travel. Married to Marcia Wierda Halpern; father of three sons — P. Griffin Halpern (Ane), Travis F.B. Halpern (Rachel), and Alec B.W. Halpern (Melissa) — and grandfather to Kliff Halpern-Basurko and Arlo Hendrix Halpern.</p>
+
+      <p>In 2023, I underwent an allogeneic stem cell transplant at Dana-Farber Cancer Institute / Brigham and Women's Hospital following a diagnosis of blood cancer. I suffered a relapse and was subsequently diagnosed with Acute Myeloid Leukemia (AML). I underwent a second stem cell transplant at UCSD Medical Center in November 2024. I am currently in remission. This journey has been chronicled in a public journal (CaringBridge) and in several op-eds published in the San Diego Union-Tribune.</p>
+    </div>
+
+    <!-- FROM THE OTHER SIDE: MEMOIR -->
+    <p class="section-label">A Journal of Illness, Endurance, and What Remains</p>
+    <h2 class="section-title">From the Other Side</h2>
+
+    <div class="prose" style="margin-bottom:56px;">
+      <p>I spent four decades as a prosecutor&mdash;the last thirty-six of which were spent as an Assistant U.S. Attorney in the Southern District of California. It was a career built on gathering facts, following evidence, and reaching conclusions. The system, for all its many imperfections, was built on the idea that truth was immutable and answers were possible.</p>
+      <p>In the fall of 2020, I encountered a different kind of uncertainty. The kind that doesn&rsquo;t resolve so cleanly. The kind that requires you to keep living inside the question, without any assurance it will ever be answered.</p>
+      <p>What follows is a journal I began after I was diagnosed with blood cancer&mdash;written for my family, my friends, and anyone else who finds themselves standing at a similar threshold. It is not a medical chronicle, though medicine is everywhere in it. It is written as honestly as I can manage about the reality of this experience: the fear, the clarity, the unexpected humor, the long stretches of waiting, and the strange gift of being forced to pay attention to your own life.</p>
+      <p>I am still writing it.</p>
+      <p>The story is not finished.</p>
+    </div>
+
+    <!-- JOURNAL ENTRIES -->
+    <div style="padding-top:12px;">
+
+      <p style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(28px,3.2vw,38px);font-weight:700;color:var(--gold);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:40px;">Journal Entries</p>
+
+      <!-- ENTRY 1 TEASER -->
+      <div style="margin-bottom:32px;padding-bottom:32px;">
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--mid-gray);margin-bottom:8px;">Entry One</p>
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:24px;line-height:1.15;">The Anomaly</h3>
+        <blockquote style="font-family:'EB Garamond',Georgia,serif;font-size:18px;font-style:italic;line-height:1.8;color:var(--ink);border-left:3px solid var(--gold);padding-left:24px;margin:0 0 28px 0;max-width:640px;">The first clue was a number. It sat there&mdash;unremarkable&mdash;buried in a routine blood test. One of those annual checkups that feels more like paperwork than medicine. I didn&rsquo;t feel sick. I wasn&rsquo;t tired. Nothing hurt. If anything, I felt far better than men my age had any right to feel.</blockquote>
+        <a href="https://philliphalpern.substack.com/p/the-anomaly" target="_blank" style="font-family:'EB Garamond',Georgia,serif;font-size:14px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:2px;">Read on Substack ↗</a>
+      </div>
+
+      <div style="padding-top:8px;text-align:center;padding-bottom:48px;border-bottom:2px solid var(--gold);">
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:22px;font-weight:500;font-style:italic;color:var(--navy);margin-bottom:18px;">Additional chapters published regularly on Substack.</p>
+        <a href="https://substack.com/@philhalpern" target="_blank" style="font-family:'EB Garamond',Georgia,serif;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:3px;font-weight:500;">Visit From the Other Side ↗</a>
+      </div>
+
+    </div>
+
+    <!-- PERSONAL ESSAYS -->
+    <h2 class="section-title" style="margin-top:48px;margin-bottom:0px;color:var(--gold);">Personal Essays</h2>
+    <div style="padding-top:48px;margin-top:0px;">
+
+      <div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;"><a href="https://timesofsandiego.com/opinion/2021/08/07/massive-redevelopment-of-navy-property-threatens-san-diegos-future/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(14,26,43,0.2);padding-bottom:2px;">Redevelopment Threatens San Diego's Future ↗</a></h3>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">Times of San Diego</p>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On urban development, public interest, and the need for careful stewardship of San Diego's naval properties.</p>
+      </div>
+
+      <div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;"><a href="https://www.sandiegouniontribune.com/2026/01/16/opinion-surviving-an-often-fatal-illness-let-me-see-my-life-with-clarity/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(14,26,43,0.2);padding-bottom:2px;">Surviving an Often-Fatal Illness Let Me See My Life with Clarity ↗</a></h3>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On the unexpected clarity that comes from confronting mortality, and what a life-threatening diagnosis reveals about what actually matters.</p>
+      </div>
+
+      <div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;"><a href="https://www.sandiegouniontribune.com/2023/11/26/my-blood-cancer-didnt-keep-me-off-my-bike-for-long-yet-full-recovery-remains-unclear/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(14,26,43,0.2);padding-bottom:2px;">My Blood Cancer Didn't Keep Me Off My Bike for Long, Yet Full Recovery Remains Unclear ↗</a></h3>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">Cycling, endurance, and the gradual reckoning with uncertainty in the aftermath of cancer treatment.</p>
+      </div>
+
+      <div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;"><a href="https://www.sandiegouniontribune.com/2021/05/07/my-mother-in-law-was-brilliant-funny-and-kind-plus-she-fought-nazis-as-a-young-woman/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(14,26,43,0.2);padding-bottom:2px;">My Mother-in-Law Was Brilliant, Funny and Kind. Plus She Fought Nazis as a Young Woman ↗</a></h3>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">A tribute to a life of courage, principle, and family, and what it means to stand for something larger than yourself.</p>
+      </div>
+
+      <div style="margin-bottom:48px;padding-bottom:0;">
+        <h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;"><a href="https://www.sandiegouniontribune.com/2021/07/13/the-navy-is-launching-a-major-redevelopment-project-and-many-san-diegans-arent-paying-attention/" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(14,26,43,0.2);padding-bottom:2px;">The Navy is Launching a Major Redevelopment Project and Many San Diegans Aren't Paying Attention ↗</a></h3>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
+        <p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On a critical development project with citywide implications, and why San Diego residents should be engaged in the conversation.</p>
+      </div>
+
+    </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <p class="section-label">Contact</p>
+  <h2 class="section-title">Get in Touch</h2>
+  <p class="contact-tagline">For speaking engagements, media appearances, op-ed collaborations, or general correspondence.</p>
+
+  <div class="contact-info">
+    <div class="contact-item">
+      <span class="contact-item-label">Website</span>
+      <a href="#" class="contact-item-value">PhillipHalpern.com</a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-item-label">Email</span>
+      <a href="/cdn-cgi/l/email-protection#bcccd4d5d0d0d5ccfcccd4d5d0d0d5ccd0ded4ddd0ccd9ced292dfd3d1" class="contact-item-value"><span class="__cf_email__" data-cfemail="dfafb7b6b3b3b6af9fafb7b6b3b3b6afb3bdb7beb3afbaadb1f1bcb0b2">[email&#160;protected]</span></a>
+    </div>
+    <div class="contact-item">
+      <span class="contact-item-label">Based in</span>
+      <span class="contact-item-value">San Diego, California</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-item-label">Ongoing Writing</span>
+      <a href="https://substack.com/@philhalpern" target="_blank" class="contact-item-value">Substack</a>
+      <p class="domain-note">Personal reflections and commentary</p>
+    </div>
+  </div>
+
+  <a href="mailto:PhillipHalpern@gmail.com" class="btn-primary">Send a Message</a>
+  &nbsp;&nbsp;
+  <a href="PhillipHalpern_CV.pdf" download="PhillipHalpern_CV.pdf" class="btn-ghost" style="border-color:rgba(14,26,43,0.3);color:var(--navy);display:inline-block;margin-top:12px;">&#8659; Download CV</a>
+</section>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', function() {
+    toggle.classList.toggle('open');
+    links.classList.toggle('open');
+  });
+
+  links.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      toggle.classList.remove('open');
+      links.classList.remove('open');
+    });
+  });
+</script>
+</body>
+</html>
