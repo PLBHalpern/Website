@@ -63,6 +63,37 @@
     transition: color 0.2s;
   }
   .nav-links a:hover { color: var(--gold-light); }
+  .nav-dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  min-width: 220px;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 9px 16px;
+  white-space: nowrap;
+}
 
   /* HERO */
   #home {
@@ -1312,8 +1343,8 @@
   <a href="#personal">Personal ▾</a>
   <ul class="dropdown-menu">
     <li><a href="#personal">Background</a></li>
-    <li><a href="#substack-journal">Substack Journal</a></li>
-    <li><a href="#caringbridge-journal">CaringBridge Journal</a></li>
+    <li><a href="#substack-journal">Substack</a></li>
+    <li><a href="#caringbridge-journal">CaringBridge</a></li>
     <li><a href="#personal-essays">Personal Essays</a></li>
   </ul>
 </li>
