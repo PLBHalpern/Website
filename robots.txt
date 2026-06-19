@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Allow all crawlers full access to PDF documents
+Allow: /press_pdfs/
+
+Sitemap: https://philliphalpern.com/sitemap.xml
