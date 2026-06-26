@@ -31,9 +31,9 @@
 <link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="https://fonts.googleapis.com" rel="preconnect">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="preload"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="preload">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
@@ -862,9 +862,23 @@ body {
   .site-nav .nav-dropdown:hover > .dropdown-menu,
   .site-nav .nav-dropdown:focus-within > .dropdown-menu { display: block; }
 
-  /* About-sidebar position titles: approximately 50% tighter */
-  .sidebar-credentials > .credential-item:nth-child(-n+5) { margin-bottom: 9px; }
-  .sidebar-credentials > .credential-item:nth-child(6) { margin-top: 18px; }
+  /* About-sidebar position titles: match the 12px spacing used between degree entries */
+  .sidebar-credentials .credential-title { margin-bottom: 12px; }
+  .sidebar-credentials .credential-title .credential-label:empty { display: none; }
+
+  /* Personal essay listings mirror the Commentaries typographic hierarchy on a light background */
+  .personal-writing-item { padding: 20px 0; border-bottom: 1px solid var(--rule); }
+  .personal-writing-item:last-child { border-bottom: none; }
+  .personal-writing-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 18px;
+    color: var(--navy);
+    margin-bottom: 5px;
+    font-style: italic;
+    line-height: 1.35;
+  }
+  .personal-writing-publication { font-size: 12px; color: var(--gold); letter-spacing: 0.1em; }
+  .personal-writing-teaser { font-size: 14.5px; color: var(--mid-gray); margin-top: 7px; line-height: 1.6; }
 
   @media (max-width: 900px) {
     .site-nav .nav-hamburger { display: flex; }
@@ -2274,28 +2288,24 @@ body {
 <section id="about">
 <div class="about-grid">
 <div class="about-sidebar">
-<div class="photo-container" style="width:85%;margin-bottom:28px;">
-<img alt="Phillip L.B. Halpern speaking to reporters outside a federal courthouse" decoding="async" height="252" loading="lazy" src="og-image-about.webp" style="width:100%;height:auto;display:block;border:1px solid rgba(184,148,63,0.3);" width="480"/>
+<div class="photo-container" style="width:85%;margin-bottom:28px;overflow:hidden;aspect-ratio:430/252;border:1px solid rgba(184,148,63,0.3);">
+<img alt="Phillip L.B. Halpern speaking to reporters outside a federal courthouse" decoding="async" height="252" loading="lazy" src="og-image-about.webp" style="width:112%;height:100%;object-fit:cover;object-position:center;display:block;margin-left:-6%;" width="480"/>
 </div>
 <div class="sidebar-credentials">
-<div class="credential-item">
+<div class="credential-item credential-title">
 <span class="credential-label">Position</span>
 <span class="credential-value">Assistant U.S. Attorney (Ret.)</span>
 </div>
-<div class="credential-item">
-<span class="credential-label"> </span>
+<div class="credential-item credential-title">
 <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Chief, Major Frauds &amp; Special Prosecutions</span>
 </div>
-<div class="credential-item">
-<span class="credential-label"> </span>
+<div class="credential-item credential-title">
 <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Special Assistant to the U.S. Attorney</span>
 </div>
-<div class="credential-item">
-<span class="credential-label"> </span>
+<div class="credential-item credential-title">
 <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Senior Litigation Counsel</span>
 </div>
-<div class="credential-item">
-<span class="credential-label"> </span>
+<div class="credential-item credential-title">
 <span class="credential-value" style="font-weight:400;font-size:14px;color:#6b6b6b;">Senior Legal Counsel</span>
 </div>
 <div class="credential-item">
@@ -2384,10 +2394,10 @@ body {
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/hunter_indictment.pdf" target="_blank">⇓ Read the Hunter Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/duncan_hunter_sentencing_memo.pdf" target="_blank">⇓ Read the Duncan Hunter Sentencing Memo</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/margaret_hunter_sentencing_memo.pdf" target="_blank">⇓ Read the Margaret Hunter Sentencing Memo</a></p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-duncan-hunter">⇓ View This Case in the Document Archive</a></p>
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
 Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
-</p>
-<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-duncan-hunter">⇓ View This Case in the Document Archive</a></p></div>
+</p></div>
 <div class="case-card" id="case-azano">
 <span class="case-number">02</span>
 <div class="case-rule"></div>
@@ -2452,8 +2462,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/foggo_plea_statement_of_facts.pdf" target="_blank">⇓ Read the Foggo Statement of Facts</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/foggo_sentencing_memo.pdf" target="_blank">⇓ Read the Foggo Sentencing Memo</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/foggo_sentencing_reply_memo.pdf" target="_blank">⇓ Read the U.S. Reply to Foggo's Sentencing Memo</a></p>
-<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Valerie Chu and Jason Forge</p>
-<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-foggo">⇓ View This Case in the Document Archive</a></p></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-foggo">⇓ View This Case in the Document Archive</a></p>
+<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Valerie Chu and Jason Forge</p></div>
 <div class="case-card" id="case-wilkes">
 <span class="case-number">06</span>
 <div class="case-rule"></div>
@@ -2481,10 +2491,10 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read Wilkes' Ninth Circuit Appellate Opinion
     </a>
 </p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-wilkes">⇓ View This Case in the Document Archive</a></p>
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
     Co-lead prosecutor with Assistant U.S. Attorneys Sanjay Bhandari, Valerie Chu, and Jason Forge
-  </p>
-<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-wilkes">⇓ View This Case in the Document Archive</a></p></div>
+  </p></div>
 <div class="case-card" id="case-cunningham">
 <span class="case-number">07</span>
 <div class="case-rule"></div>
@@ -2497,8 +2507,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/cunningham_plea_agreement.pdf" target="_blank">⇓ Read the Cunningham Plea Agreement</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/cunningham_sentencing_memo.pdf" target="_blank">⇓ Read the Cunningham Sentencing Memo</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/cunningham_sentencing_press_release.pdf" target="_blank">⇓ Read the Sentencing Press Release</a></p>
-<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Sanjay Bhandari, Valerie Chu, and Jason Forge</p>
-<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-cunningham">⇓ View This Case in the Document Archive</a></p></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-cunningham">⇓ View This Case in the Document Archive</a></p>
+<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Sanjay Bhandari, Valerie Chu, and Jason Forge</p></div>
 <div class="case-card" id="case-bradley">
 <span class="case-number">08</span>
 <div class="case-rule"></div>
@@ -2602,9 +2612,9 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the Frega Indictment
     </a>
 </p>
-<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSA Charles LaBella, assisted by AUSAs Steve Clark, Kevin Kelly, John Kirby, and Tom McNamara</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-frega">⇓ View This Case in the Document Archive</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="#doc-frega">⇓ Explore the Further Documentary Record</a></p>
-<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-frega">⇓ View This Case in the Document Archive</a></p></div>
+<p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSA Charles LaBella, assisted by AUSAs Steve Clark, Kevin Kelly, John Kirby, and Tom McNamara</p></div>
 <div class="case-card" id="case-sherbondy">
 <span class="case-number">14</span>
 <div class="case-rule"></div>
@@ -3275,30 +3285,30 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
   PERSONAL ESSAYS
 </p>
 <div style="padding-top:24px;margin-top:0px;">
-<div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
-<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;">Redevelopment Threatens San Diego's Future</h3><p style="margin-top:10px;"><a class="case-link" href="https://timesofsandiego.com/opinion/2021/08/07/massive-redevelopment-of-navy-property-threatens-san-diegos-future/" target="_blank">⇓ Read Redevelopment Threatens San Diego's Future</a></p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">Times of San Diego</p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On urban development, public interest, and the need for careful stewardship of San Diego's naval properties.</p>
+<div class="personal-writing-item">
+<h3 class="personal-writing-title">Redevelopment Threatens San Diego's Future</h3><p style="margin-top:8px;"><a class="case-link" href="https://timesofsandiego.com/opinion/2021/08/07/massive-redevelopment-of-navy-property-threatens-san-diegos-future/" target="_blank">⇓ Read Redevelopment Threatens San Diego's Future</a></p>
+<p class="personal-writing-publication">Times of San Diego</p>
+<p class="personal-writing-teaser">On urban development, public interest, and the need for careful stewardship of San Diego's naval properties.</p>
 </div>
-<div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
-<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;">Surviving an Often-Fatal Illness Let Me See My Life with Clarity</h3><p style="margin-top:10px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2026/01/16/opinion-surviving-an-often-fatal-illness-let-me-see-my-life-with-clarity/" target="_blank">⇓ Read Surviving an Often-Fatal Illness Let Me See My Life with Clarity</a></p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On the unexpected clarity that comes from confronting mortality, and what a life-threatening diagnosis reveals about what actually matters.</p>
+<div class="personal-writing-item">
+<h3 class="personal-writing-title">Surviving an Often-Fatal Illness Let Me See My Life with Clarity</h3><p style="margin-top:8px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2026/01/16/opinion-surviving-an-often-fatal-illness-let-me-see-my-life-with-clarity/" target="_blank">⇓ Read Surviving an Often-Fatal Illness Let Me See My Life with Clarity</a></p>
+<p class="personal-writing-publication">San Diego Union-Tribune</p>
+<p class="personal-writing-teaser">On the unexpected clarity that comes from confronting mortality, and what a life-threatening diagnosis reveals about what actually matters.</p>
 </div>
-<div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
-<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;">My Blood Cancer Didn't Keep Me Off My Bike for Long, Yet Full Recovery Remains Unclear</h3><p style="margin-top:10px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2023/11/26/my-blood-cancer-didnt-keep-me-off-my-bike-for-long-yet-full-recovery-remains-unclear/" target="_blank">⇓ Read My Blood Cancer Didn't Keep Me Off My Bike for Long, Yet Full Recovery Remains Unclear</a></p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">Cycling, endurance, and the gradual reckoning with uncertainty in the aftermath of cancer treatment.</p>
+<div class="personal-writing-item">
+<h3 class="personal-writing-title">My Blood Cancer Didn't Keep Me Off My Bike for Long, Yet Full Recovery Remains Unclear</h3><p style="margin-top:8px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2023/11/26/my-blood-cancer-didnt-keep-me-off-my-bike-for-long-yet-full-recovery-remains-unclear/" target="_blank">⇓ Read My Blood Cancer Didn't Keep Me Off My Bike for Long, Yet Full Recovery Remains Unclear</a></p>
+<p class="personal-writing-publication">San Diego Union-Tribune</p>
+<p class="personal-writing-teaser">Cycling, endurance, and the gradual reckoning with uncertainty in the aftermath of cancer treatment.</p>
 </div>
-<div style="margin-bottom:48px;padding-bottom:48px;border-bottom:1px solid var(--rule);">
-<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;">My Mother-in-Law Was Brilliant, Funny and Kind. Plus She Fought Nazis as a Young Woman</h3><p style="margin-top:10px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2021/05/07/my-mother-in-law-was-brilliant-funny-and-kind-plus-she-fought-nazis-as-a-young-woman/" target="_blank">⇓ Read My Mother-in-Law Was Brilliant, Funny and Kind. Plus She Fought Nazis as a Young Woman</a></p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">A tribute to a life of courage, principle, and family, and what it means to stand for something larger than yourself.</p>
+<div class="personal-writing-item">
+<h3 class="personal-writing-title">My Mother-in-Law Was Brilliant, Funny and Kind. Plus She Fought Nazis as a Young Woman</h3><p style="margin-top:8px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2021/05/07/my-mother-in-law-was-brilliant-funny-and-kind-plus-she-fought-nazis-as-a-young-woman/" target="_blank">⇓ Read My Mother-in-Law Was Brilliant, Funny and Kind. Plus She Fought Nazis as a Young Woman</a></p>
+<p class="personal-writing-publication">San Diego Union-Tribune</p>
+<p class="personal-writing-teaser">A tribute to a life of courage, principle, and family, and what it means to stand for something larger than yourself.</p>
 </div>
-<div style="margin-bottom:48px;padding-bottom:0;">
-<h3 style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(24px,2.8vw,34px);font-weight:700;color:var(--navy);margin-bottom:16px;line-height:1.15;">The Navy is Launching a Major Redevelopment Project and Many San Diegans Aren't Paying Attention</h3><p style="margin-top:10px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2021/07/13/the-navy-is-launching-a-major-redevelopment-project-and-many-san-diegans-arent-paying-attention/" target="_blank">⇓ Read The Navy is Launching a Major Redevelopment Project and Many San Diegans Aren't Paying Attention</a></p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:14px;color:var(--mid-gray);margin-top:8px;">San Diego Union-Tribune</p>
-<p style="font-family:'EB Garamond',Georgia,serif;font-size:16px;line-height:1.7;color:var(--ink);margin-top:14px;">On a critical development project with citywide implications, and why San Diego residents should be engaged in the conversation.</p>
+<div class="personal-writing-item">
+<h3 class="personal-writing-title">The Navy is Launching a Major Redevelopment Project and Many San Diegans Aren't Paying Attention</h3><p style="margin-top:8px;"><a class="case-link" href="https://www.sandiegouniontribune.com/2021/07/13/the-navy-is-launching-a-major-redevelopment-project-and-many-san-diegans-arent-paying-attention/" target="_blank">⇓ Read The Navy is Launching a Major Redevelopment Project and Many San Diegans Aren't Paying Attention</a></p>
+<p class="personal-writing-publication">San Diego Union-Tribune</p>
+<p class="personal-writing-teaser">On a critical development project with citywide implications, and why San Diego residents should be engaged in the conversation.</p>
 </div>
 </div>
 </div>
