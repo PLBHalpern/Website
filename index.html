@@ -28,10 +28,10 @@
 <meta content="Phillip L.B. Halpern is a retired federal prosecutor who served 36 years as an Assistant U.S. Attorney in San Diego, prosecuting major corruption cases." name="twitter:description"/>
 <meta content="https://philliphalpern.com/og-image.jpg" name="twitter:image"/>
 <meta content="Phillip L.B. Halpern speaking to reporters outside a federal courthouse" name="twitter:image:alt"/>
-<link href="/favicon.ico" rel="icon" sizes="any">
+<link href="/favicon.ico" rel="icon" sizes="any"/>
 <link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png"/>
 <link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com" rel="preconnect">
 <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="preload"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
@@ -63,7 +63,7 @@ body {
     line-height: 1.75;
   }
 
-  nav {
+  .site-nav {
     position: fixed;
     top: 0; left: 0; right: 0;
     z-index: 100;
@@ -647,7 +647,7 @@ body {
     .cases-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 900px) {
-    nav { padding: 0 24px; }
+    .site-nav { padding: 0 24px; }
     .nav-links { gap: 14px; }
     #home, section { padding-left: 6vw; padding-right: 6vw; }
     .about-grid { grid-template-columns: 1fr; gap: 40px; }
@@ -842,6 +842,81 @@ body {
     text-transform: uppercase;
   }
   .footer-links a:hover { color: var(--gold); }
+
+
+  /* VERIFIED RESPONSIVE PRIMARY NAVIGATION */
+  .site-nav .dropdown-toggle {
+    font-family: 'EB Garamond', Georgia, serif;
+    color: rgba(255,255,255,0.75);
+    background: none;
+    border: 0;
+    padding: 0;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  .site-nav .dropdown-toggle:hover,
+  .site-nav .dropdown-toggle:focus-visible { color: var(--gold-light); }
+  .site-nav .nav-dropdown:hover > .dropdown-menu,
+  .site-nav .nav-dropdown:focus-within > .dropdown-menu { display: block; }
+
+  /* About-sidebar position titles: approximately 50% tighter */
+  .sidebar-credentials > .credential-item:nth-child(-n+5) { margin-bottom: 9px; }
+  .sidebar-credentials > .credential-item:nth-child(6) { margin-top: 18px; }
+
+  @media (max-width: 900px) {
+    .site-nav .nav-hamburger { display: flex; }
+    .site-nav .nav-links {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - 60px);
+      overflow-y: auto;
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding: 8px 0 16px;
+      z-index: 150;
+    }
+    .site-nav .nav-links.open { display: flex; }
+    .site-nav .nav-links > li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .site-nav .nav-links > li:last-child { border-bottom: none; }
+    .site-nav .nav-links > li > a,
+    .site-nav .dropdown-toggle {
+      display: block;
+      width: 100%;
+      padding: 14px 28px;
+      text-align: left;
+      font-size: 13px;
+    }
+    .site-nav .dropdown-menu {
+      display: none;
+      position: static;
+      min-width: 0;
+      border: 0;
+      border-top: 1px solid rgba(184,148,63,0.18);
+      box-shadow: none;
+      padding: 0 0 6px;
+      margin: 0 0 4px;
+      background: rgba(255,255,255,0.025);
+    }
+    .site-nav .nav-dropdown.open > .dropdown-menu { display: block; }
+    .site-nav .dropdown-menu li { border: 0; }
+    .site-nav .dropdown-menu a {
+      padding: 10px 28px 10px 46px;
+      font-size: 12px;
+      white-space: normal;
+      color: rgba(255,255,255,0.62);
+    }
+    .site-nav .nav-dropdown:hover > .dropdown-menu { display: none; }
+    .site-nav .nav-dropdown.open:hover > .dropdown-menu { display: block; }
+  }
 </style>
 <!-- CONSOLIDATED SCHEMA MARKUP: PROFILE, CAREER, CASES, PRESS, AND WRITING -->
 <script type="application/ld+json">
@@ -2125,16 +2200,16 @@ body {
 </script>
 </link></head>
 <body>
-<nav>
+<nav aria-label="Primary navigation" class="site-nav">
 <a class="nav-brand" href="#home">Phillip L.B. Halpern</a>
-<button aria-label="Open navigation menu" class="nav-hamburger" id="navToggle">
+<button aria-controls="navLinks" aria-expanded="false" aria-label="Open navigation menu" class="nav-hamburger" id="navToggle" type="button">
 <span></span><span></span><span></span>
 </button>
 <ul class="nav-links" id="navLinks">
 <li><a href="#about">About</a></li>
 <li class="nav-dropdown">
-<a href="#cases">Professional ▾</a>
-<ul class="dropdown-menu">
+<button aria-controls="professionalMenu" aria-expanded="false" class="dropdown-toggle" type="button">Professional ▾</button>
+<ul class="dropdown-menu" id="professionalMenu">
 <li><a href="#cases">Cases</a></li>
 <li><a href="#press-media">Press &amp; Media</a></li>
 <li><a href="#international">International</a></li>
@@ -2145,15 +2220,15 @@ body {
 </ul>
 </li>
 <li class="nav-dropdown">
-<a href="#personal">Personal ▾</a>
-<ul class="dropdown-menu">
+<button aria-controls="personalMenu" aria-expanded="false" class="dropdown-toggle" type="button">Personal ▾</button>
+<ul class="dropdown-menu" id="personalMenu">
 <li><a href="#personal">Background</a></li>
 <li><a href="#substack-journal">Substack</a></li>
 <li><a href="#caringbridge-journal">CaringBridge</a></li>
 <li><a href="#personal-essays">Personal Essays</a></li>
 </ul>
 </li>
-<li><a href="press_pdfs/phillip_halpern_cv.pdf" target="_blank">CV</a></li>
+<li><a href="press_pdfs/phillip_halpern_cv.pdf" rel="noopener" target="_blank">CV</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
 </nav>
@@ -2312,7 +2387,7 @@ body {
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
 Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 </p>
-<nav aria-label="Related material for United States v. Duncan Hunter" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-duncan-hunter">View All Case Documents</a></nav></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-duncan-hunter">⇓ View This Case in the Document Archive</a></p></div>
 <div class="case-card" id="case-azano">
 <span class="case-number">02</span>
 <div class="case-rule"></div>
@@ -2323,7 +2398,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">The evidence included undercover recordings, financial records, and communications reflecting efforts to conceal the true source of the funds. Convicted on 36 felony counts, Azano was sentenced to federal prison, fined more than $560,000, and ordered deported upon his release. The case underscored a clear principle: American elections are not for sale—even to those with substantial resources and access.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/azano_ss_indictment_3.pdf" target="_blank">⇓ Read the Azano Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/azano_sentence_memo.pdf" target="_blank">⇓ Read the Azano Sentencing Memo</a></p>
-<nav aria-label="Related material for United States v. Jose Susumo Azano-Matsura, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-azano">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Supervising prosecutor, assisting AUSAs Helen Hong, Billy Joe McLean, Tim Perry, Mark Pletcher, and Andrew Schopler</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-azano">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Supervising prosecutor, assisting AUSAs Helen Hong, Billy Joe McLean, Tim Perry, Mark Pletcher, and Andrew Schopler</p>
 </div>
 <div class="case-card" id="case-oconnor">
 <span class="case-number">03</span>
@@ -2338,9 +2413,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the O'Connor Information
     </a>
 </p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-oconnor">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Maureen O'Connor" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-oconnor">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-oconnor">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
   Assisted by Michael Merriman
 </p>
 </div>
@@ -2362,7 +2436,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
      ⇓ Read the Sentencing Press Release
   </a>
 </p>
-<nav aria-label="Related material for United States v. Floyd Landis" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-landis">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-landis">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
   Assisted by Peter J. Mazza
 </p>
 </div>
@@ -2379,7 +2453,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/foggo_sentencing_memo.pdf" target="_blank">⇓ Read the Foggo Sentencing Memo</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/foggo_sentencing_reply_memo.pdf" target="_blank">⇓ Read the U.S. Reply to Foggo's Sentencing Memo</a></p>
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Valerie Chu and Jason Forge</p>
-<nav aria-label='Related material for United States v. Kyle "Dusty" Foggo, et al.' class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-foggo">View All Case Documents</a></nav></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-foggo">⇓ View This Case in the Document Archive</a></p></div>
 <div class="case-card" id="case-wilkes">
 <span class="case-number">06</span>
 <div class="case-rule"></div>
@@ -2410,7 +2484,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">
     Co-lead prosecutor with Assistant U.S. Attorneys Sanjay Bhandari, Valerie Chu, and Jason Forge
   </p>
-<nav aria-label="Related material for United States v. Brent R. Wilkes" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-wilkes">View All Case Documents</a></nav></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-wilkes">⇓ View This Case in the Document Archive</a></p></div>
 <div class="case-card" id="case-cunningham">
 <span class="case-number">07</span>
 <div class="case-rule"></div>
@@ -2424,7 +2498,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/cunningham_sentencing_memo.pdf" target="_blank">⇓ Read the Cunningham Sentencing Memo</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/cunningham_sentencing_press_release.pdf" target="_blank">⇓ Read the Sentencing Press Release</a></p>
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSAs Sanjay Bhandari, Valerie Chu, and Jason Forge</p>
-<nav aria-label='Related material for United States v. Randy "Duke" Cunningham' class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-cunningham">View All Case Documents</a></nav></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-cunningham">⇓ View This Case in the Document Archive</a></p></div>
 <div class="case-card" id="case-bradley">
 <span class="case-number">08</span>
 <div class="case-rule"></div>
@@ -2439,7 +2513,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the Bradley Information
     </a>
 </p>
-<nav aria-label="Related material for United States v. William R. Bradley, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-bradley">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Kyle Hoffman</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-bradley">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Kyle Hoffman</p>
 </div>
 <div class="case-card" id="case-metabolife">
 <span class="case-number">09</span>
@@ -2454,7 +2528,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the Metabolife Indictment
     </a>
 </p>
-<nav aria-label="Related material for United States v. Metabolife International, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-metabolife">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Kyle Hoffman</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-metabolife">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA Kyle Hoffman</p>
 </div>
 <div class="case-card" id="case-majumder">
 <span class="case-number">10</span>
@@ -2469,7 +2543,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the Majumder Indictment
     </a>
 </p>
-<nav aria-label='Related material for United States v. Parthasarathi "Bob" Majumder' class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-majumder">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-majumder">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-bullpen">
 <span class="case-number">11</span>
@@ -2499,9 +2573,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
      ⇓ Read the FBI Press Overview
   </a>
 </p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-bullpen">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Gregory Marino, et al. (“Operation Bullpen”)" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-bullpen">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-bullpen">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-aw-sales">
 <span class="case-number">12</span>
@@ -2513,9 +2586,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">The case demonstrated that federal criminal enforcement is not confined to financial misconduct but extends to corporate practices that cause direct and measurable harm. Securing a conviction required building a chain of evidence from contaminated strawberries harvested in Mexico, through importation into the United States, and into the company's production process. The prosecution established a clear principle: cutting corners on safety is not merely a regulatory failure, but a federal crime.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/a&amp;w_indictment.pdf" target="_blank">⇓ Read the A&amp;W Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/a&amp;w_press_release.pdf" target="_blank">⇓ Read the A&amp;W Press Release</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-a&amp;w">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. A&amp;W Sales Corp., et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-aw-sales">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSAs Melanie Pierson and Steven Segreto</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-aw-sales">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSAs Melanie Pierson and Steven Segreto</p>
 </div>
 <div class="case-card" id="case-frega">
 <span class="case-number">13</span>
@@ -2530,10 +2602,9 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
        ⇓ Read the Frega Indictment
     </a>
 </p>
-
 <p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Co-lead prosecutor with AUSA Charles LaBella, assisted by AUSAs Steve Clark, Kevin Kelly, John Kirby, and Tom McNamara</p>
 <p style="margin-top:10px;"><a class="case-link" href="#doc-frega">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Patrick Frega, et al. (“The Judges Case”)" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-frega">View All Case Documents</a></nav></div>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-frega">⇓ View This Case in the Document Archive</a></p></div>
 <div class="case-card" id="case-sherbondy">
 <span class="case-number">14</span>
 <div class="case-rule"></div>
@@ -2544,7 +2615,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">Sherbondy was particularly effective at targeting former PSA employees, convincing them to invest their entire individual retirement accounts (IRA funds) generated from the PSA buyout. He financed an extravagant lifestyle with stolen investor money—corporate jets, luxury vehicles, Mexican groves, international travel—while bragging about having made billions through his investments. As with all Ponzi schemes, the operation depended on a continuous flow of new money and ultimately collapsed under its own weight. The prosecution underscored a simple rule: investment returns must be earned, not fabricated. When profits are paid from investor funds rather than real activity, the enterprise is not investment—it is fraud.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/sherbondy_indictment.pdf" target="_blank">⇓ Read the Sherbondy Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/sherbondy_press_release.pdf" target="_blank">⇓ Read the Sherbondy Press Release</a></p>
-<nav aria-label="Related material for United States v. Harold J. Sherbondy" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-sherbondy">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-sherbondy">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-saikhon">
 <span class="case-number">15</span>
@@ -2555,9 +2626,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc">Mario Saikhon, a wealthy Imperial Valley farmer, orchestrated an expansive tax evasion scheme that grew increasingly complex until it collapsed under its own weight. Over a period of years, he concealed millions in income by partnering with a corrupt IRS agent—the same agent at the center of the Morales prosecution—paying hundreds of thousands of dollars in bribes in exchange for audit protection and inside guidance on how to evade detection.</p>
 <p class="case-desc" style="margin-top:10px;">Rather than relying on a single method, Saikhon constructed a sprawling paper architecture of sham corporations, nominee accounts, and fictitious payroll arrangements designed to siphon off profits while minimizing reported income. The relationship evolved into a decade-long criminal enterprise. When investigators followed the money to Mexico City and back, Saikhon was convicted of conspiracy, tax evasion, and bribery—the largest individual criminal tax prosecution in the history of the Internal Revenue Service.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/saikhon_indictment.pdf" target="_blank">⇓ Read the Saikhon Indictment</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-saikhon">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Mario Saikhon" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-saikhon">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-saikhon">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-fountain-youth">
 <span class="case-number">16</span>
@@ -2569,9 +2639,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">The case proved remarkably prescient. Many of the same themes that drove the prosecution in 1992 remain with us today: extravagant claims of age reversal, imported biological products, offshore suppliers, and consumers willing to spend substantial sums in pursuit of longer life and better health. Decades before "anti-aging medicine" became a cultural phenomenon, the Fountain of Youth prosecution exposed the risks that arise when hope, pseudoscience, and profit converge beyond established medical and regulatory safeguards.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/wellgood_indictment.pdf" target="_blank">⇓ Read the Wellgood Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/fountain_of_youth_press_release.pdf" target="_blank">⇓ Read the Fountain of Youth Press Release</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-fountain-youth">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Frances Wellgood, et al. (“Fountain of Youth Case”)" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-fountain-youth">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-fountain-youth">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-morales">
 <span class="case-number">17</span>
@@ -2583,9 +2652,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">Morales and his son constructed a maze of sham corporations, ghost employees, and phony payroll checks, laundering payments through relatives while living far beyond his reported salary—cars, investments, and Super Bowl tickets. The investigation culminated in an undercover operation in which Morales agreed to launder what he believed to be drug proceeds, sealing his fate. He pleaded guilty to conspiracy, bribery, money laundering, and tax fraud, and was sentenced to 12 years in federal prison—an IRS agent undone by his own accounting.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/morales_indictment.pdf" target="_blank">⇓ Read the Morales Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/morales_trial_memo.pdf" target="_blank">⇓ Read the Morales Trial Memo</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-morales">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Robert Morales" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-morales">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by DOJ Trial Attorney Steven Ward</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-morales">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by DOJ Trial Attorney Steven Ward</p>
 </div>
 <div class="case-card" id="case-cambra">
 <span class="case-number">18</span>
@@ -2597,7 +2665,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">The case signaled that federal criminal enforcement extended beyond traditional controlled substances to the broader market for performance-enhancing compounds sold without prescription or medical supervision. Cambra’s prosecution drew a clear line: HGH distributed outside legitimate medical channels is not a regulatory matter—it is a federal crime. The precedent proved consequential as HGH enforcement expanded in subsequent years across professional sports and the anti-aging industry.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/cambra_indictment.pdf" target="_blank">⇓ Read the Cambra Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/cambra_press_release.pdf" target="_blank">⇓ Read the Cambra Press Release</a></p>
-<nav aria-label="Related material for United States v. William Cambra" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-cambra">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-cambra">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-naghdi">
 <span class="case-number">19</span>
@@ -2610,9 +2678,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/naghdi_indictment.pdf" target="_blank">⇓ Read the Naghdi Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/naghdi_trial_memo.pdf" target="_blank">⇓ Read the Naghdi Trial Memo</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/naghdi_2255.pdf" target="_blank">⇓ Read the U.S. Response to Naghdi's Habeas Petition</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-naghdi">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Javid Naghdi" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-naghdi">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-naghdi">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-jenkins">
 <span class="case-number">20</span>
@@ -2623,9 +2690,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc">The Jenkins investigation dismantled the largest counterfeit steroid ring ever uncovered in the United States—a sophisticated operation producing and distributing fake anabolic steroids on a mass scale, exposing thousands of users to unknown and potentially dangerous substances. The organization operated through an elaborate distribution network that spanned virtually every state, moving product through channels designed to mimic legitimate pharmaceutical supply chains.</p>
 <p class="case-desc" style="margin-top:10px;">The case, built on years of accumulated expertise in steroid enforcement, represented the culmination of Halpern’s work in this area. It brought to a close a series of investigations that began with a single phone call from a border inspector in 1984 and ended with the dismantling of the most extensive counterfeit steroid operation the government had encountered. Jenkins and his co-conspirators were convicted on multiple felony counts and brought national attention to the dangers posed by anabolic steroids.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/jenkins_indictment.pdf" target="_blank">⇓ Read the Jenkins Indictment</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-jenkins">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. David Jenkins, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-jenkins">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by DOJ Trial Attorney Raymond Philipps</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-jenkins">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by DOJ Trial Attorney Raymond Philipps</p>
 </div>
 <div class="case-card" id="case-duchaine">
 <span class="case-number">21</span>
@@ -2638,9 +2704,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/duchaine_indictment.pdf" target="_blank">⇓ Read the Duchaine Indictment</a></p>
 <p style="margin-top:6px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Duchaine was prosecuted as a codefendant in the Jenkins case (No. 87CR-0491-JLI); he later was prosecuted for a separate probation violation and sentenced by a different federal judge.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/duchaine_press_release.pdf" target="_blank">⇓ Read the Duchaine Press Release</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-duchaine">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label='Related material for United States v. Dan Duchaine ("The Steroid Guru")' class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-duchaine">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-duchaine">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-christie">
 <span class="case-number">22</span>
@@ -2652,9 +2717,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">Prosecuting an embargo violation required connecting complex international transactions to the specific prohibitions of a Presidential executive order—largely untested legal ground at the time. The conviction demonstrated that embargoes carried real criminal consequences and that the government would pursue those who attempted to circumvent them through layered international schemes. The case established a framework that subsequent embargo enforcement actions would follow.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/christie_indictment.pdf" target="_blank">⇓ Read the Christie Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/smiths_trial_memo.pdf" target="_blank">⇓ Read the Smiths' Trial Memo</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-christie">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Francis George Christie, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-christie">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-christie">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-sullivan">
 <span class="case-number">23</span>
@@ -2666,7 +2730,7 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">To handle distribution on the ground, Sullivan recruited his brother — a member of the Outlaw Motorcycle Gang — to use gang members to offload and move the product. The case was extraordinarily complex to investigate and try, a corruption case layered inside a narcotics conspiracy layered inside an institutional betrayal. Sullivan's conviction in 1986 stood for a principle that goes beyond the underlying offenses: when the gatekeeper becomes the conduit, the system's defenses aren't merely tested — they are bypassed from within. Accountability, the case made clear, must run inward as well as outward.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/sullivan_indictment.pdf" target="_blank">⇓ Read the Sullivan Indictment</a></p>
 <p style="margin-top:10px;"><a class="case-link" href="press_pdfs/sullivan_trial_memo.pdf" target="_blank">⇓ Read the Sullivan Trial Memo</a></p>
-<nav aria-label="Related material for United States v. Richard P. Sullivan" class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-sullivan">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-sullivan">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-inanlou">
 <span class="case-number">24</span>
@@ -2678,9 +2742,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">The stolen components were routed through front companies, mislabeled as benign goods, and shipped through international channels to Iran. The investigation uncovered a vast network of at least 20 co-conspirators and shipments worth millions of dollars. The case resulted in substantial prison sentences and prompted lasting reforms in how the Navy safeguards sensitive military equipment, underscoring the national security risks posed by insider theft and illicit export schemes.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/inanlou_indictment.pdf" target="_blank">⇓ Read the Inanlou Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/inanlou_press_release.pdf" target="_blank">⇓ Read the Inanlou Press Release</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-inanlou">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Saied Asefi Inanlou, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-inanlou">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA C. Stevens Crandall</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-inanlou">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Assisted by AUSA C. Stevens Crandall</p>
 </div>
 <div class="case-card" id="case-fitton">
 <span class="case-number">25</span>
@@ -2692,9 +2755,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">Halpern directed that Fitton be arrested along with his companion, Victoria Steenrod, a world champion power lifter. After Fitton's release on bond, he fled. Halpern pursued the case over several years, ultimately assembling multiple federal charges and uncovering a broader distribution network. The charges—smuggling under 18 U.S.C. § 545, unlawful introduction of a prescription drug into interstate commerce, and failure to report illegal income—were drawn from existing statutes in the absence of steroid-specific criminal law. The case became the first federal prosecution of steroid distribution in the United States, establishing a framework that would guide subsequent enforcement and earning Halpern a reputation in the industry press as “the steroid smuggler’s worst nightmare.”</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/fitton_indictment.pdf" target="_blank">⇓ Read the Fitton Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/fitton_press_releases.pdf" target="_blank">⇓ Read the Fitton Press Releases</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-fitton">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Richard Anthony Fitton, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-fitton">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-fitton">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 <div class="case-card" id="case-witte">
 <span class="case-number">26</span>
@@ -2706,9 +2768,8 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 <p class="case-desc" style="margin-top:10px;">Her husband was killed by her oldest child in a staged hunting accident. The mother-in-law was killed by the younger child with a crossbow; her body dismembered and partially concealed in the family garden. As suspicion grew, the remains were placed in a Coleman cooler, transported across the country in the family RV, and ultimately discarded in the Otay Mesa landfill in San Diego. During the federal investigation, Halpern obtained a confession from Witte's younger son that became a critical breakthrough in the homicide investigation. The case revealed a chilling inversion of a fundamental role: the person expected to protect became the architect of harm, using family trust as both shield and weapon.</p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/witte_indictment.pdf" target="_blank">⇓ Read the Witte Indictment</a></p>
 <p style="margin-top:16px;"><a class="case-link" href="press_pdfs/witte_trial_memo.pdf" target="_blank">⇓ Read the Witte Trial Memo</a></p>
-
 <p style="margin-top:10px;"><a class="case-link" href="#doc-witte">⇓ Explore the Further Documentary Record</a></p>
-<nav aria-label="Related material for United States v. Hilma Marie Witte, et al." class="case-related"><span class="case-related-label">Related</span><a href="documents.html#archive-witte">View All Case Documents</a></nav><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
+<p style="margin-top:10px;"><a class="case-link" href="documents.html#archive-witte">⇓ View This Case in the Document Archive</a></p><p style="margin-top:10px;font-family:'EB Garamond',Georgia,serif;font-size:13px;color:var(--mid-gray);font-style:italic;">Sole Prosecutor</p>
 </div>
 </div>
 </section>
@@ -3275,20 +3336,63 @@ Co-lead prosecutor with AUSAs Emily Allen and Mark Conover
 </div>
 </section><footer><p class="footer-name">© Phillip L.B. <span>Halpern</span></p><p class="footer-note">Federal prosecutor · Author · Voice on justice</p><nav aria-label="Footer navigation" class="footer-links"><a href="#about">About</a><a href="#cases">Cases</a><a href="#press-media">Press &amp; Media</a><a href="documents.html">Document Archive</a><a href="#writing">Commentaries</a><a href="#personal-essays">Personal Essays</a><a href="#contact">Contact</a></nav></footer>
 <script>
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
+(function () {
+  const nav = document.querySelector('.site-nav');
+  if (!nav) return;
 
-  toggle.addEventListener('click', function() {
-    toggle.classList.toggle('open');
-    links.classList.toggle('open');
-  });
+  const toggle = nav.querySelector('#navToggle');
+  const links = nav.querySelector('#navLinks');
+  const dropdowns = Array.from(nav.querySelectorAll('.nav-dropdown'));
 
-  links.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      toggle.classList.remove('open');
-      links.classList.remove('open');
+  function closeDropdowns(except) {
+    dropdowns.forEach(function (item) {
+      if (item === except) return;
+      item.classList.remove('open');
+      const button = item.querySelector('.dropdown-toggle');
+      if (button) button.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function closeMenu() {
+    if (!toggle || !links) return;
+    toggle.classList.remove('open');
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    closeDropdowns();
+  }
+
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      const isOpen = toggle.classList.toggle('open');
+      links.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', String(isOpen));
+      if (!isOpen) closeDropdowns();
+    });
+  }
+
+  dropdowns.forEach(function (item) {
+    const button = item.querySelector('.dropdown-toggle');
+    if (!button) return;
+    button.addEventListener('click', function () {
+      const willOpen = !item.classList.contains('open');
+      closeDropdowns(item);
+      item.classList.toggle('open', willOpen);
+      button.setAttribute('aria-expanded', String(willOpen));
     });
   });
+
+  nav.querySelectorAll('.dropdown-menu a, .nav-links > li > a').forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!nav.contains(event.target) && window.innerWidth <= 900) closeMenu();
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
 </script>
 </body>
 </html>
