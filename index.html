@@ -862,10 +862,19 @@ body {
   .site-nav .nav-dropdown:hover > .dropdown-menu,
   .site-nav .nav-dropdown:focus-within > .dropdown-menu { display: block; }
 
-  /* About-sidebar position titles: match the 12px spacing used between degree entries */
+  /* About-sidebar position titles */
   .sidebar-credentials .credential-title { margin-bottom: 12px; }
   .sidebar-credentials .credential-title .credential-label:empty { display: none; }
-  .sidebar-credentials .credential-title .credential-value { color: var(--navy) !important; line-height: 1.1; }
+  .sidebar-credentials .credential-title .credential-value {
+    color: var(--navy) !important;
+    line-height: 1.35;
+  }
+  .sidebar-credentials .title-continuation {
+    display: block;
+    margin-top: 2px;
+    font-weight: 400;
+    font-size: 14px;
+  }
 
   /* Personal essay listings mirror the Commentaries typographic hierarchy on a light background */
   .personal-writing-item { padding: 20px 0; border-bottom: 1px solid var(--rule); }
@@ -1091,12 +1100,12 @@ body {
         "Phil Halpern",
         "P.L.B. Halpern"
       ],
-      "description": "Phillip L.B. Halpern is a retired American federal prosecutor who served thirty-six years as an Assistant United States Attorney in the Southern District of California, where he was Chief of the Major Frauds and Special Prosecutions Section. Over a career marked by an undefeated trial record, he prosecuted landmark public-corruption cases including those of Congressmen Randy \"Duke\" Cunningham and Duncan D. Hunter, CIA Executive Director Kyle \"Dusty\" Foggo, San Diego Mayor Maureen O'Connor, and a series of sitting San Diego judges. He later became known for a series of San Diego Union-Tribune op-eds on prosecutorial independence and the rule of law, and is the author of the memoir \"From the Other Side.\"",
+      "description": "Phillip L.B. Halpern is a retired American federal prosecutor who served thirty-six years as an Assistant United States Attorney in the Southern District of California, where he was Chief of the Major Frauds & Special Prosecution Section. Over a career marked by an undefeated trial record, he prosecuted landmark public-corruption cases including those of Congressmen Randy \"Duke\" Cunningham and Duncan D. Hunter, CIA Executive Director Kyle \"Dusty\" Foggo, San Diego Mayor Maureen O'Connor, and a series of sitting San Diego judges. He later became known for a series of San Diego Union-Tribune op-eds on prosecutorial independence and the rule of law, and is the author of the memoir \"From the Other Side.\"",
       "image": {
         "@id": "https://philliphalpern.com/#profile-image"
       },
       "url": "https://philliphalpern.com/",
-      "jobTitle": "Chief, Major Frauds and Special Prosecutions Section (Retired)",
+      "jobTitle": "Chief, Major Frauds & Special Prosecution Section (Retired)",
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Assistant United States Attorney",
@@ -1109,7 +1118,7 @@ body {
         "@type": "OrganizationRole",
         "roleName": [
           "Assistant United States Attorney",
-          "Chief, Major Frauds and Special Prosecutions Section",
+          "Chief, Major Frauds & Special Prosecution Section",
           "Special Assistant to the United States Attorney",
           "Senior Litigation Counsel",
           "Senior Legal Counsel"
@@ -2289,8 +2298,8 @@ body {
 <section id="about">
 <div class="about-grid">
 <div class="about-sidebar">
-<div class="photo-container" style="width:85%;margin-bottom:28px;overflow:hidden;aspect-ratio:430/252;border:1px solid rgba(184,148,63,0.3);">
-<img alt="Phillip L.B. Halpern speaking to reporters outside a federal courthouse" decoding="async" height="252" loading="lazy" src="og-image-about.webp" style="width:112%;height:100%;object-fit:cover;object-position:center;display:block;margin-left:-6%;" width="480"/>
+<div class="photo-container" style="width:82%;margin-bottom:28px;overflow:hidden;aspect-ratio:420/252;border:1px solid rgba(184,148,63,0.3);">
+<img alt="Phillip L.B. Halpern speaking to reporters outside a federal courthouse" decoding="async" height="252" loading="lazy" src="og-image-about.webp" style="width:114%;height:100%;object-fit:cover;object-position:center;display:block;margin-left:-7%;" width="480"/>
 </div>
 <div class="sidebar-credentials">
 <div class="credential-item credential-title">
@@ -2298,7 +2307,8 @@ body {
 <span class="credential-value">Assistant U.S. Attorney (Ret.)</span>
 </div>
 <div class="credential-item credential-title">
-<span class="credential-value" style="font-weight:400;font-size:14px;">Chief, Major Frauds &amp; Special Prosecution Section</span>
+<span class="credential-value" style="font-weight:400;font-size:14px;">Chief, Major Frauds &amp; Special</span>
+<span class="credential-value title-continuation">Prosecution Section</span>
 </div>
 <div class="credential-item credential-title">
 <span class="credential-value" style="font-weight:400;font-size:14px;">Special Assistant to the U.S. Attorney</span>
