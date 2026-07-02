@@ -325,18 +325,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://philliphalpern.com/press_pdfs/forway_industries_wapo.pdf</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://philliphalpern.com/press_pdfs/forway_industries_la_times.pdf</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://philliphalpern.com/press_pdfs/sullivan_indictment.pdf</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
@@ -500,6 +488,18 @@
   </url>
   <url>
     <loc>https://philliphalpern.com/press_pdfs/the_invisible_man.pdf</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://philliphalpern.com/press_pdfs/forway_industries_wapo.pdf</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://philliphalpern.com/press_pdfs/forway_industries_la_times.pdf</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
