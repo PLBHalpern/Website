@@ -40,7 +40,7 @@ def build_docid_map(soup):
             continue
         ex = card.find('a', href=lambda x: x and x.startswith('#doc-'))
         if ex:
-            m[ex['href'].lstrip('#')] = h.get_text(strip=True)
+            m[ex['href'].lstrip('#')] = (h.get_text(strip=True), card.get('id') or '')
     return m
 
 def get_group(a, docid_map):
@@ -51,13 +51,16 @@ def get_group(a, docid_map):
         aid = anc.get('id') or ''
         if 'case-card' in cls:
             h = anc.find('h3', class_='case-name')
-            return h.get_text(strip=True) if h else "Uncategorized"
+            cid = anc.get('id') or ''
+            anchor = cid.replace('case-', 'archive-', 1) if cid else ''
+            return (h.get_text(strip=True) if h else "Uncategorized", anchor)
         if aid.startswith('doc-'):
             if aid in docid_map:
-                return docid_map[aid]
+                name, cid = docid_map[aid]
+                return (name, cid.replace('case-', 'archive-', 1) if cid else aid.replace('doc-', 'archive-', 1))
             h = anc.find('h3')
-            return h.get_text(strip=True) if h else aid
-    return PROFILE_GROUP  # links not in a card/doc section = profile/career docs
+            return (h.get_text(strip=True) if h else aid, aid.replace('doc-', 'archive-', 1))
+    return (PROFILE_GROUP, 'archive-profile-career')  # links not in a card/doc section
 
 def main():
     if not os.path.exists(INDEX):
@@ -77,8 +80,8 @@ def main():
             continue
         seen.add(href)
         text = a.get_text(strip=True).lstrip('⇓▶').strip()
-        group = get_group(a, docid_map)
-        records.append({'href': href, 'text': text, 'group': group})
+        group, anchor = get_group(a, docid_map)
+        records.append({'href': href, 'text': text, 'group': group, 'anchor': anchor})
         groups.setdefault(group, []).append(records[-1])
 
     # ---- Write sitemap.xml ----
@@ -101,7 +104,8 @@ def main():
     # ---- Write documents.html ----
     body = []
     for group, items in groups.items():
-        body.append('<section class="doc-case">')
+        anchor = items[0].get('anchor') or ''
+        body.append(f'<section class="doc-case" id="{anchor}">' if anchor else '<section class="doc-case">')
         body.append(f'  <h2>{html.escape(group)}</h2>')
         body.append('  <ul>')
         for r in items:
